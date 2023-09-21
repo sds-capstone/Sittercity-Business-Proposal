@@ -1,2 +1,3 @@
 # 2023-09-proj5-sittercity
-Sittercity
+
+[Albert Y. Kim](https://twitter.com/rudeboybert) 
