@@ -1,0 +1,81 @@
+---
+title: "eda_sittercity"
+format: html
+editor: visual
+---
+
+## EDA - Sittercity
+
+```{r}
+#loading libraries
+library(tidyverse)
+library(readr)
+```
+
+```{r}
+#loading data 
+
+# get filepath
+filepath <- paste0(getwd(), "/data")
+
+# create file name paths
+filenames_path <- paste0(filepath,"/",list.files(filepath))
+
+# file names
+filenames <- gsub(pattern = ".csv", "", x = list.files(filepath))
+
+# read csvs
+data <- lapply(filenames_path, read_csv)
+
+# assign list of df to dataframes
+for (i in seq_along(data)){
+  assign(filenames[i],as.data.frame(data[i][1])) 
+}
+
+rm(data)
+
+```
+
+```{r}
+# Construct the full path to the CSV file
+file_name <- "data.csv"
+file_path <- file.path(Sys.getenv("Documents"), "sds410", file_name) # Change to your path
+
+  # Load the data.table package
+  library(data.table)
+  
+  # Specify the number of rows to read at a time (adjust as needed)
+  chunk_size <- 10000
+  
+  chunk_number <- 1
+  
+  # Initialize an empty data.table to store the results
+  data <- data.table()
+  
+  
+  # starts timer to count total time it takes to load data
+  #loading package 
+  library(tictoc)
+  # start timer
+  tic()
+  # Read the CSV file in chunks
+  while (TRUE) {
+    chunk <- fread("data.csv", header = TRUE, nrows = chunk_size)
+    if (nrow(chunk) == 0) break  # Break the loop when there are no more rows
+    data <- rbindlist(list(data, chunk))
+    print(paste("This is chunk", chunk_number))
+    chunk_number = chunk_number + 1 
+  }
+  #end timer
+  toc()
+ 
+  # take a random sample of 10% of the total dataset 
+  
+  # setting same seed to have consistent random samples for different users 
+  set.seed(1)
+  data_sample <- dplyr::slice_sample(data, prop = .1)
+
+  # export data sample 
+  write.csv(data_sample,"data_sample_387.csv", row.names =FALSE)
+  
+```
