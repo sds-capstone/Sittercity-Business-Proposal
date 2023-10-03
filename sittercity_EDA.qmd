@@ -1,0 +1,33 @@
+---
+title: "sittercity_EDA"
+format: html
+editor: visual
+---
+
+## 
+
+
+
+
+```{r}
+#loading libraries
+library(tidyverse)
+library(readr)
+library(lubridate)
+```
+
+
+```{r}
+#Merging dataset with locations id and original data sample 
+data_filtered <- read_csv("data_filtered.csv")
+locations <- read_csv("locations.csv")
+
+locations <- locations %>%  
+  select(id,cityname,stateabbr,statename)
+
+#merge id and location_id
+
+merged_data <- data_filtered %>% 
+  inner_join(locations, by = c("location_id" = "id"))
+```
+
