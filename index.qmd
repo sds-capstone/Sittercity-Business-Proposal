@@ -11,7 +11,7 @@ title: "SDS410: Capstone in SDS"
 # Lec 5.1: Tue 10/3
 
 ## Today
-change something
+
 1. Roster Google Sheet: Can you all clone your project repo?
 1. Code review exercies. Each of you:
     1. Download the `index.qmd` file I shared on Slack
