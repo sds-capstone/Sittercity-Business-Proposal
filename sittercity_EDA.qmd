@@ -7,8 +7,6 @@ editor: visual
 ## 
 
 
-
-
 ```{r}
 #loading libraries
 library(tidyverse)
@@ -16,18 +14,77 @@ library(readr)
 library(lubridate)
 ```
 
+```{r}
+# get filepath
+filepath <- paste0(getwd(), "/data")
+
+# create file name paths
+filenames_path <- paste0(filepath,"/",list.files(filepath))
+
+# file names
+filenames <- gsub(pattern = ".csv", "", x = list.files(filepath))
+
+# read csvs
+data <- lapply(filenames_path, read_csv)
+
+# assign list of df to dataframes
+for (i in seq_along(data)){
+  assign(filenames[i],as.data.frame(data[i][1])) 
+}
+
+rm(data)
+```
+
 
 ```{r}
 #Merging dataset with locations id and original data sample 
-data_filtered <- read_csv("data_filtered.csv")
-locations <- read_csv("locations.csv")
-
 locations <- locations %>%  
   select(id,cityname,stateabbr,statename)
 
 #merge id and location_id
-
 merged_data <- data_filtered %>% 
   inner_join(locations, by = c("location_id" = "id"))
 ```
+
+
+Exploratory Data Analysis
+
+```{r}
+head(merged_data)
+summary(merged_data)
+dim(merged_data)
+```
+
+
+```{r}
+## group_by states and type of service provided (provider_type and provider)
+
+df_by_state <- merged_data %>%
+  group_by(provider_type,
+           type,
+           statename) %>%
+  summarise(count = n())
+
+```
+
+
+```{r}
+
+#Creating proportions
+
+proportions <- df_by_state %>% 
+  select(provider_type,
+           type,
+           statename,
+           count) %>% 
+  group_by(type,
+           statename,
+           count) %>% 
+  mutate(proportion = count / sum(count) * 100)
+
+#plot 
+ggplot(data = proportions , aes(x = statename , y = proportion, fill = Category)) + geom_col()
+
+```
+
 
