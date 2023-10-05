@@ -6,16 +6,12 @@ editor: visual
 
 ## 
 
-
-
-
 ```{r}
 #loading libraries
 library(tidyverse)
 library(readr)
 library(lubridate)
 ```
-
 
 ```{r}
 #Merging dataset with locations id and original data sample 
@@ -30,4 +26,3 @@ locations <- locations %>%
 merged_data <- data_filtered %>% 
   inner_join(locations, by = c("location_id" = "id"))
 ```
-
