@@ -37,6 +37,8 @@ rm(data)
 ```
 
 
+
+
 ```{r}
 #Merging dataset with locations id and original data sample 
 locations <- locations %>%  
@@ -45,6 +47,18 @@ locations <- locations %>%
 #merge id and location_id
 merged_data <- data_filtered %>% 
   inner_join(locations, by = c("location_id" = "id"))
+
+
+#Renaming column "type" to just either "Provider" or "Seeker" 
+#mutate(new_variable = existing_variable/3)
+
+merged_data <- merged_data %>% 
+    mutate(
+    type = recode(type, "Account::Provider" = "provider")
+    ) %>% 
+  mutate(
+    type = recode(type, "Account::Seeker" = "seeker")
+    )
 ```
 
 
@@ -64,29 +78,96 @@ dim(merged_data)
 df_by_state <- merged_data %>%
   group_by(provider_type,
            type,
-           statename) %>%
+           statename,
+           stateabbr) %>%
   summarise(count = n())
 
 ```
 
 
 ```{r}
-
 #Creating proportions
-
 proportions <- df_by_state %>% 
-  select(provider_type,
-           type,
-           statename,
-           count) %>% 
+  select(provider_type, 
+         type,
+         statename,
+         stateabbr,
+         count) %>% 
+  filter(type == "provider") %>%
   group_by(type,
            statename,
            count) %>% 
-  mutate(proportion = count / sum(count) * 100)
+  filter(count >= 300)
 
-#plot 
-ggplot(data = proportions , aes(x = statename , y = proportion, fill = Category)) + geom_col()
+#%>% 
+  #mutate(proportion = count / sum(count) * 100)
 
 ```
+
+
+
+
+```{r}
+#plot 
+ggplot(data = proportions , aes(x = stateabbr , y = count, fill = provider_type)) + geom_col() + scale_fill_brewer(palette = "Paired") +
+  scale_fill_brewer(palette = "Paired")+
+  ylab("Count")+
+  ggtitle("Count of providers type by state") +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+
+
+barplot <- ggplot(proportions, aes(x = stateabbr, y = count, fill = provider_type))+
+  geom_col(position = "dodge")+
+  facet_wrap(~stateabbr)+
+  scale_fill_brewer(palette = "Paired")+
+  ylab("Count")+
+  ggtitle("Top 5 states with the most providers") +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+barplot
+
+
+
+```
+
+
+
+```{r}
+
+#Not used yet but will be helpful
+# map
+#install.packages("usmap")
+library(usmap) #import the package
+library(ggplot2) #use ggplot2 to add layer for visualization
+
+#### MAP PRPOPORTIONS
+proportions <- proportions %>% 
+  rename(state = StateAbbr)
+
+plot_usmap(data = proportions, values = "proportion", regions = "states", color = "blue") + 
+  scale_fill_continuous(low = "white", high = "red", name = "Proportion", label = scales::comma) +
+  labs(title = "Prop of Categories by U.S. States") + 
+  theme(panel.background=element_blank(),
+        legend.position = "right") +
+  facet_wrap(~Category)
+
+
+#### MAP COUNT
+df_by_state <- df_by_state %>% 
+  rename(state = StateAbbr)
+
+
+plot_usmap(data = df_by_state, values = "count", regions = "states", color = "blue") + 
+  scale_fill_continuous(low = "white", high = "red", name = "Count", label = scales::comma) +
+  labs(title = "Count of Categories by U.S. States") + 
+  theme(panel.background=element_blank(),
+        legend.position = "right") +
+  facet_wrap(~Category)
+```
+
+
+
+
 
 
