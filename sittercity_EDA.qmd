@@ -6,14 +6,12 @@ editor: visual
 
 ## 
 
-
 ```{r}
 #loading libraries
 library(tidyverse)
 library(readr)
 library(lubridate)
 ```
-
 
 ```{r}
 # get filepath
@@ -35,9 +33,6 @@ for (i in seq_along(data)){
 
 rm(data)
 ```
-
-
-
 
 ```{r}
 #Merging dataset with locations id and original data sample 
@@ -61,8 +56,6 @@ merged_data <- merged_data %>%
     )
 ```
 
-
-
 Exploratory Data Analysis
 
 ```{r}
@@ -71,7 +64,6 @@ summary(merged_data)
 dim(merged_data)
 ```
 
-
 ```{r}
 ## group_by states and type of service provided (provider_type and provider)
 
@@ -79,11 +71,11 @@ df_by_state <- merged_data %>%
   group_by(provider_type,
            type,
            statename,
-           stateabbr) %>%
+           stateabbr,
+           cityname) %>%
   summarise(count = n())
 
 ```
-
 
 ```{r}
 #Creating proportions
@@ -92,20 +84,43 @@ proportions <- df_by_state %>%
          type,
          statename,
          stateabbr,
-         count) %>% 
+         count,
+         cityname) %>% 
   filter(type == "provider") %>%
   group_by(type,
            statename,
-           count) %>% 
-  filter(count >= 300)
+           count,
+           cityname)
+
+proportion_cityname <- proportions %>% 
+  filter(count > 75)
 
 #%>% 
   #mutate(proportion = count / sum(count) * 100)
 
 ```
 
+```{r}
+#plot 
+ggplot(data = proportions , aes(x = cityname , y = count, fill = provider_type)) + geom_col() + scale_fill_brewer(palette = "Paired") +
+  scale_fill_brewer(palette = "Paired")+
+  ylab("Count")+
+  ggtitle("Count of providers type by state") +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
 
 
+barplot <- ggplot(proportion_cityname, aes(x = cityname, y = count, fill = provider_type))+
+  geom_col(position = "dodge")+
+  facet_wrap(~cityname)+
+  scale_fill_brewer(palette = "Paired")+
+  ylab("Count")+
+  ggtitle("Top 5 cities with the most providers") +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+barplot
+
+```
 
 ```{r}
 #plot 
@@ -127,11 +142,7 @@ barplot <- ggplot(proportions, aes(x = stateabbr, y = count, fill = provider_typ
         axis.ticks.x = element_blank())
 barplot
 
-
-
 ```
-
-
 
 ```{r}
 
@@ -165,9 +176,3 @@ plot_usmap(data = df_by_state, values = "count", regions = "states", color = "bl
         legend.position = "right") +
   facet_wrap(~Category)
 ```
-
-
-
-
-
-
