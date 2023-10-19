@@ -11,25 +11,63 @@ editor: visual
 library(tidyverse)
 library(readr)
 library(lubridate)
+library(janitor)
+library(stringr)
 ```
 
 ```{r}
-# get filepath
-filepath <- paste0(getwd(), "/data")
+#reading sitters dataset 
+data <- read_csv("data/sitters_data.csv")
+```
 
-# create file name paths
-filenames_path <- paste0(filepath,"/",list.files(filepath))
+```{r}
+#cleaning data 
 
-# file names
-filenames <- gsub(pattern = ".csv", "", x = list.files(filepath))
+#renaming columns with underscore and lowercase for better use
+data <- data %>%
+        clean_names()
 
-# read csvs
-data <- lapply(filenames_path, read_csv)
+#splitting numbers into min and max columns 
+  
+data <- separate(data, col=sitter_profiles_babysitter_pay_rate, into=c('sitters_pay_min', 'sitters_pay_max'), sep=',',remove = TRUE)
 
-# assign list of df to dataframes
-for (i in seq_along(data)){
-  assign(filenames[i],as.data.frame(data[i][1])) 
-}
+#using gsub to extract only the numbers from the strings
 
-rm(data)
+data <- data %>% 
+  mutate(sitters_pay_min = as.numeric(gsub(".*?([0-9]+).*","\\1", sitters_pay_min))) %>% 
+  mutate(sitters_pay_max = as.numeric(gsub(".*?([0-9]+).*","\\1", sitters_pay_max)))
+
+#how to get rid of the last two digits in each row? 
+
+data <- data %>% 
+  mutate(sitters_pay_min = str_sub(data$sitters_pay_min, 1, str_length(data$sitters_pay_min)-2),
+  sitters_pay_max = str_sub(data$sitters_pay_max, 1, str_length(data$sitters_pay_max)-2)) 
+
+
+```
+
+```{r}
+#calculating age based on birthdate 
+#installing package to calculate age 
+install.packages("eeptools") 
+library("eeptools")
+
+```
+
+```{r}
+
+sitter_birth_date <- ymd(data$sitter_birth_date)
+
+
+#getting date today 
+date_today <-  Sys.Date()  
+
+
+data <- data %>% 
+  age_calc(sitter_birth_date,          # Convert birth to age
+                  date_today,
+                  units = "years")
+  
+sitter_age_round <- floor(sitter_age)  
+
 ```
