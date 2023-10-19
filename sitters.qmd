@@ -68,8 +68,6 @@ data <- data %>%
                   date_today,
                   units = "years")
   
-
-
 sitter_age_round <- floor(sitter_age)  
 
 ```
