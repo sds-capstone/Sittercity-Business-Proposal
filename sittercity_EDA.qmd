@@ -6,7 +6,6 @@ editor: visual
 
 ## 
 
-
 ```{r}
 #loading libraries
 library(tidyverse)
