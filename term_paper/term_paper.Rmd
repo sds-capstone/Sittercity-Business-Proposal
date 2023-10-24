@@ -5,7 +5,7 @@ Gracia
 blinded: 0
 
 authors: 
-- name: Abby
+- name: Abby P
   thanks: The authors gratefully acknowledge ...
   affiliation: Department of YYY, University of XXX
   
