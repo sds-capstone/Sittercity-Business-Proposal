@@ -11,6 +11,9 @@ authors:
   
 - name: Author 2
   affiliation: Department of ZZZ, University of WWW
+  
+- name: Camila Maldonado
+  affiliation: Department of ZZZ, University of WWW
 
 keywords:
 - 3 to 6 keywords
