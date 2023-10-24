@@ -5,7 +5,7 @@ title: Title here
 blinded: 0
 
 authors: 
-- name: Author 1
+- name: Abby
   thanks: The authors gratefully acknowledge ...
   affiliation: Department of YYY, University of XXX
   
