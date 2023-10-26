@@ -1,3 +1,7 @@
+```{r}
+
+```
+
 ---
 title: "sittercity_EDA"
 format: html
@@ -6,14 +10,12 @@ editor: visual
 
 ## 
 
-
 ```{r}
 #loading libraries
 library(tidyverse)
 library(readr)
 library(lubridate)
 ```
-
 
 ```{r}
 # get filepath
@@ -36,7 +38,6 @@ for (i in seq_along(data)){
 rm(data)
 ```
 
-
 ```{r}
 #Merging dataset with locations id and original data sample 
 locations <- locations %>%  
@@ -47,8 +48,6 @@ merged_data <- data_filtered %>%
   inner_join(locations, by = c("location_id" = "id"))
 ```
 
-
-
 Exploratory Data Analysis
 
 ```{r}
@@ -56,7 +55,6 @@ head(merged_data)
 summary(merged_data)
 dim(merged_data)
 ```
-
 
 ```{r}
 ## group_by states and type of service provided (provider_type and provider)
@@ -68,7 +66,6 @@ df_by_state <- merged_data %>%
   summarise(count = n())
 
 ```
-
 
 ```{r}
 
@@ -89,4 +86,35 @@ ggplot(data = proportions , aes(x = statename , y = proportion, fill = Category)
 
 ```
 
+```{r}
+# Load the dplyr package if not already loaded
+library(dplyr)
 
+top_babysitter_cities_states <- merged_data %>%
+  filter(type == "Account::Provider", provider_type == "babysitter") %>%
+  group_by(cityname, stateabbr, provider_type) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
+
+# Print the top babysitter cities and states for account: provider type
+print(top_babysitter_cities_states)
+
+
+
+```
+
+```{r}
+# Load the dplyr package if not already loaded
+library(dplyr)
+
+# Assuming your dataset is named 'merged_data'
+top_city_seekers <- merged_data %>%
+  filter(type == "Account::Seeker") %>%
+  group_by(cityname, stateabbr) %>%
+  summarise(seeker_count = n()) %>% 
+  arrange(desc(seeker_count))
+# Print the result
+print(top_city_seekers)
+
+
+```
