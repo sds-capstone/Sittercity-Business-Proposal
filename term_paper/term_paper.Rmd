@@ -1,15 +1,18 @@
 ---
 title: Title here
-
+Gracia
 # to produce blinded version set to 1
 blinded: 0
 
 authors: 
-- name: Author 1
+- name: Abby P
   thanks: The authors gratefully acknowledge ...
   affiliation: Department of YYY, University of XXX
   
 - name: Author 2
+  affiliation: Department of ZZZ, University of WWW
+  
+- name: Camila Maldonado
   affiliation: Department of ZZZ, University of WWW
 
 keywords:
