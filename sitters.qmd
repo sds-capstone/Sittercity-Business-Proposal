@@ -105,3 +105,10 @@ ratings <- ratings %>%
 rating_sitters <- ratings %>%
   inner_join(data, by = c("sitters_member_id" = "sitters_member_id", "sitters_user_id" = "sitters_user_id"))
 ```
+
+```{r}
+# age from dob
+rating_sitters$sitters_birth_date = as.numeric(difftime(Sys.Date(),rating_sitters$sitters_birth_date, units = "weeks"))/52.25
+
+rating_sitters$sitters_birth_date<- round(rating_sitters$sitters_birth_date, digits = 0)
+```
