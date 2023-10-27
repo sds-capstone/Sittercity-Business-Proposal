@@ -1,4 +1,5 @@
 ---
+iris---
 title: "siiters_eda"
 format: html
 editor: visual
@@ -84,4 +85,23 @@ grepl("01002| 01075| 01027| 01060| 01007| 01003| 01082| 01062| 01073| 01033| 010
 ))
   
 
+```
+
+```{r}
+#Merging current dataset with new ratings dataset using 
+
+#read new dataset with ratings 
+ratings <- read_csv("data/rating_sitters.csv")
+
+#renaming columns with underscore and lowercase for better use
+ratings <- ratings %>%
+        clean_names()
+
+
+```
+
+```{r}
+
+rating_sitters <- ratings %>%
+  inner_join(data, by = c("sitters_member_id" = "sitters_member_id", "sitters_user_id" = "sitters_user_id"))
 ```
