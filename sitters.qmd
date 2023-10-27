@@ -112,3 +112,13 @@ rating_sitters$sitters_birth_date = as.numeric(difftime(Sys.Date(),rating_sitter
 
 rating_sitters$sitters_birth_date<- round(rating_sitters$sitters_birth_date, digits = 0)
 ```
+
+```{r}
+#Are older sitters more likely to get better ratings
+#Anova 
+
+anova_rating <- aov(sitters_birth_date~sitters_average_rating, data = rating_sitters)
+
+summary(anova_rating)
+
+```
