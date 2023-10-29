@@ -126,5 +126,5 @@ anova_rating <- aov(sitters_birth_date~sitters_average_rating, data = rating_sit
 summary(anova_rating)
 
 ```
-=======
+
 
