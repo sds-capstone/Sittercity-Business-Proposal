@@ -1,5 +1,4 @@
 ---
-iris---
 title: "siiters_eda"
 format: html
 editor: visual
@@ -56,7 +55,6 @@ library("eeptools")
 ```
 
 ```{r}
-
 data_wide <- data %>% 
   pivot_wider(names_from = sitter_profiles_additional_services, values_from = sitters_member_id)
 
@@ -87,18 +85,24 @@ grepl("01002| 01075| 01027| 01060| 01007| 01003| 01082| 01062| 01073| 01033| 010
 
 ```
 
+##N/A data
 ```{r}
-#Merging current dataset with new ratings dataset using 
+data_counties <-
+data_counties[!is.na(data_counties$sitters_birth_date), ]
+round(data_wide$sitters_birth_date, digits = 0)
+```
 
-#read new dataset with ratings 
-ratings <- read_csv("data/rating_sitters.csv")
 
-#renaming columns with underscore and lowercase for better use
-ratings <- ratings %>%
-        clean_names()
+```{r}
+avg_age_counties<- data_counties %>%
+group_by(counties)%>%
+summarize(mean_age= mean(sitters_birth_date))
+
+avg_age_counties$mean_age<- round(avg_age_counties$mean_age, digits = 0)
 
 
 ```
+
 
 ```{r}
 
@@ -122,3 +126,5 @@ anova_rating <- aov(sitters_birth_date~sitters_average_rating, data = rating_sit
 summary(anova_rating)
 
 ```
+=======
+
