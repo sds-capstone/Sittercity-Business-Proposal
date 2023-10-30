@@ -89,13 +89,11 @@ grepl("01002| 01075| 01027| 01060| 01007| 01003| 01082| 01062| 01073| 01033| 010
 
 ```
 
-
 ```{r}
 ##N/A data
 data_counties <- data_counties[!is.na(data_counties$sitters_birth_date), ]
 round(data_wide$sitters_birth_date, digits = 0)
 ```
-
 
 ```{r}
 avg_age_counties<- data_counties %>%
@@ -105,7 +103,6 @@ summarize(mean_age= mean(sitters_birth_date))
 avg_age_counties$mean_age<- round(avg_age_counties$mean_age, digits = 0)
 
 ```
-
 
 ```{r}
 #merging data and ratings dataset together 
@@ -121,24 +118,30 @@ rating_sitters$sitters_birth_date<- round(rating_sitters$sitters_birth_date, dig
 
 ```
 
-
-
 ```{r}
 #Are older sitters more likely to get better ratings
 #Anova 
 
-anova_rating <- aov(sitters_birth_date~sitters_average_rating, data = rating_sitters)
+anova_rating <- aov(sitters_birth_date~sitters_average_rating, data = rating_sitters_wide)
 
 summary(anova_rating)
 
 ```
 
-
-
-
 ```{r}
 #logistic regression 
-educ_lm <- lm(sitters_birth_date~sitter_profiles_education_completed, data = rating_sitters)
+educ_lm <- lm(sitters_average_rating~sitter_profiles_education_completed, data = rating_sitters_wide)
 summary(educ_lm)
 ```
 
+```{r}
+#creating column with yes/no for additional services 
+rating_sitters <- rating_sitters %>% 
+  mutate(sitter_profiles_additional_services_yes_no = c("Yes"))
+```
+
+```{r}
+rating_sitters_wide <- rating_sitters %>% 
+  pivot_wider(names_from = sitter_profiles_additional_services, values_from = sitter_profiles_additional_services_yes_no)
+
+```
