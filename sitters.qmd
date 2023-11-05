@@ -116,6 +116,20 @@ rating_sitters$sitters_birth_date = as.numeric(difftime(Sys.Date(),rating_sitter
 
 rating_sitters$sitters_birth_date<- round(rating_sitters$sitters_birth_date, digits = 0)
 
+#creating column with yes/no for additional services 
+rating_sitters <- rating_sitters %>% 
+  mutate(sitter_profiles_additional_services_yes_no = c("Yes"))
+
+```
+
+```{r}
+
+#pivotwider without losing column of ID's 
+
+rating_sitters_wide <- rating_sitters %>% 
+  pivot_wider(names_from = sitter_profiles_additional_services, values_from = sitter_profiles_additional_services_yes_no)
+
+
 ```
 
 ```{r}
@@ -126,22 +140,33 @@ anova_rating <- aov(sitters_birth_date~sitters_average_rating, data = rating_sit
 
 summary(anova_rating)
 
-```
-
-```{r}
 #logistic regression 
 educ_lm <- lm(sitters_average_rating~sitter_profiles_education_completed, data = rating_sitters_wide)
 summary(educ_lm)
 ```
 
 ```{r}
-#creating column with yes/no for additional services 
-rating_sitters <- rating_sitters %>% 
-  mutate(sitter_profiles_additional_services_yes_no = c("Yes"))
+#Transformations needed
+
+#column of ages based on categories 
+#Under 18 /18-24 /25-34/ 35-44 /45-54 /55-64 /65 and over 
+
+rating_sitters_wide <- rating_sitters_wide %>% 
+  mutate(age_range = case_when(grepl("18|19|20|21|22|23|24", sitters_birth_date, ignore.case = TRUE) ~ "18-24", 
+
+grepl("25|26|27|28|29|30|31|32|33|34", sitters_birth_date, ignore.case = TRUE) ~ "25-34",       
+grepl("35|36|37|38|39|40|41|42|43|44", sitters_birth_date, ignore.case = TRUE) ~ "35-44",                      
+
+grepl("45|46|47|48|49|50|51|52|53|54", sitters_birth_date, ignore.case = TRUE) ~ "45-54",   
+
+                    
+grepl("55|56|57|58|59|60|61|62|63|64", sitters_birth_date, ignore.case = TRUE) ~ "55-64", TRUE ~ "65 and over"
+))                              
+         
 ```
 
 ```{r}
-rating_sitters_wide <- rating_sitters %>% 
-  pivot_wider(names_from = sitter_profiles_additional_services, values_from = sitter_profiles_additional_services_yes_no)
-
+#calculating average of sitters min and max pay rate 
+rating_sitters_wide <- rating_sitters_wide %>% 
+  mutate()
 ```
