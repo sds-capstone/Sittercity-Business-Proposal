@@ -140,9 +140,7 @@ anova_rating <- aov(sitters_birth_date~sitters_average_rating, data = rating_sit
 
 summary(anova_rating)
 
-#logistic regression 
-educ_lm <- lm(sitters_average_rating~sitter_profiles_education_completed, data = rating_sitters_wide)
-summary(educ_lm)
+
 ```
 
 ```{r}
@@ -168,5 +166,44 @@ grepl("55|56|57|58|59|60|61|62|63|64", sitters_birth_date, ignore.case = TRUE) ~
 ```{r}
 #calculating average of sitters min and max pay rate 
 rating_sitters_wide <- rating_sitters_wide %>% 
-  mutate()
+   mutate(mean_pay_rate_sitters=(as.numeric(sitters_pay_min) + as.numeric(sitters_pay_max))/2)
+```
+
+```{r}
+library(moderndive)
+
+
+rating_sitters_model <- rating_sitters_wide %>% 
+  group_by(sitters_average_rating)
+
+sitters_rating_model<- lm(mean_pay_rate_sitters ~ sitters_average_rating, data= rating_sitters_model)
+
+get_regression_table(sitters_rating_model)
+summary(aov(sitters_rating_model))
+
+
+sitters_rating_model_plot <- ggplot(rating_sitters_model,
+       aes(x=sitters_average_rating,
+           y=mean_pay_rate_sitters)) +
+  geom_point() +
+  geom_smooth(se=FALSE, method = lm) + labs(title = "sitters_rating_model")
+  
+sitters_rating_model_plot 
+```
+
+```{r}
+#Interaction model: 
+sitters_age_model<- lm(mean_pay_rate_sitters ~ sitters_, data= rating_sitters_wide)
+
+get_regression_table(sitters_rating_model)
+summary(aov(sitters_rating_model))
+
+
+sitters_rating_model_plot <- ggplot(rating_sitters_wide,
+       aes(x=sitters_average_rating,
+           y=mean_pay_rate_sitters)) +
+  geom_point() +
+  geom_smooth(se=FALSE, method = lm) + labs(title = "sitters_rating_model")
+  
+sitters_rating_model_plot 
 ```
