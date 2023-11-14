@@ -85,14 +85,14 @@ grepl("01002| 01075| 01027| 01060| 01007| 01003| 01082| 01062| 01073| 01033| 010
 
 ```
 
-##N/A data
+##N/A clean data
 ```{r}
 data_counties <-
 data_counties[!is.na(data_counties$sitters_birth_date), ]
 round(data_wide$sitters_birth_date, digits = 0)
 ```
 
-
+##mean age within each county
 ```{r}
 avg_age_counties<- data_counties %>%
 group_by(counties)%>%
@@ -101,4 +101,5 @@ summarize(mean_age= mean(sitters_birth_date))
 avg_age_counties$mean_age<- round(avg_age_counties$mean_age, digits = 0)
 
 ```
+
 
