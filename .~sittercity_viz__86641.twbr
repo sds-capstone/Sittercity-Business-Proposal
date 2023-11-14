@@ -751,7 +751,27 @@
       <column caption='Special Needs Yes No' datatype='string' name='[special_needs_yes_no]' role='dimension' type='nominal' />
       <column caption='Swimming Supervision' datatype='string' name='[swimming_supervision]' role='dimension' type='nominal' />
       <column caption='Travel With Family' datatype='string' name='[travel_with_family]' role='dimension' type='nominal' />
+      <column-instance column='[sitters_user_id]' derivation='Count' name='[cnt:sitters_user_id:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[travel_with_family]' derivation='Count' name='[cnt:travel_with_family:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[crafts]' derivation='Count' name='[pcrk:cnt:crafts:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' rank-options='Competition,Ascending' type='PctRank' />
+      </column-instance>
       <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='shape' field='[:Measure Names]' type='shape'>
+            <map to='circle'>
+              <bucket>&quot;[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitters_user_id:qk]&quot;</bucket>
+            </map>
+            <map to='plus'>
+              <bucket>&quot;[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:travel_with_family:qk]&quot;</bucket>
+            </map>
+            <map to='square'>
+              <bucket>&quot;[federated.15smuc91qg93nv19xlnjr1e2ehde].[pcrk:cnt:crafts:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
@@ -1053,118 +1073,41 @@
             <datasource caption='rating_sitters_counties' name='federated.15smuc91qg93nv19xlnjr1e2ehde' />
           </datasources>
           <datasource-dependencies datasource='federated.15smuc91qg93nv19xlnjr1e2ehde'>
-            <column-instance column='[laundry]' derivation='Count' name='[cnt:laundry:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[light_housekeeping]' derivation='Count' name='[cnt:light_housekeeping:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[meal_preparation]' derivation='Count' name='[cnt:meal_preparation:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[potty_training]' derivation='Count' name='[cnt:potty_training:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[sitter_profiles_childcare_access_to_transportation_yes_no]' derivation='Count' name='[cnt:sitter_profiles_childcare_access_to_transportation_yes_no:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[sitter_profiles_cpr_certified_yes_no]' derivation='Count' name='[cnt:sitter_profiles_cpr_certified_yes_no:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[sitter_profiles_first_aid_training_yes_no]' derivation='Count' name='[cnt:sitter_profiles_first_aid_training_yes_no:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[sitter_profiles_homework_help_yes_no]' derivation='Count' name='[cnt:sitter_profiles_homework_help_yes_no:qk]' pivot='key' type='quantitative' />
+            <column caption='Age Range' datatype='string' name='[age_range]' role='dimension' type='nominal' />
             <column-instance column='[sitters_user_id]' derivation='Count' name='[cnt:sitters_user_id:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[swimming_supervision]' derivation='Count' name='[cnt:swimming_supervision:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[travel_with_family]' derivation='Count' name='[cnt:travel_with_family:qk]' pivot='key' type='quantitative' />
-            <column caption='Crafts' datatype='string' name='[crafts]' role='dimension' type='nominal' />
-            <column caption='Laundry' datatype='string' name='[laundry]' role='dimension' type='nominal' />
-            <column caption='Light Housekeeping' datatype='string' name='[light_housekeeping]' role='dimension' type='nominal' />
-            <column caption='Meal Preparation' datatype='string' name='[meal_preparation]' role='dimension' type='nominal' />
-            <column-instance column='[crafts]' derivation='Count' name='[pcrk:cnt:crafts:qk]' pivot='key' type='quantitative'>
-              <table-calc ordering-type='Rows' rank-options='Competition,Ascending' type='PctRank' />
-            </column-instance>
+            <column-instance column='[age_range]' derivation='None' name='[none:age_range:nk]' pivot='key' type='nominal' />
+            <column-instance column='[potty_training]' derivation='None' name='[none:potty_training:nk]' pivot='key' type='nominal' />
             <column caption='Potty Training' datatype='string' name='[potty_training]' role='dimension' type='nominal' />
-            <column caption='Sitter Profiles Childcare Access To Transportation Yes No' datatype='string' name='[sitter_profiles_childcare_access_to_transportation_yes_no]' role='dimension' type='nominal' />
-            <column caption='Sitter Profiles Cpr Certified Yes No' datatype='string' name='[sitter_profiles_cpr_certified_yes_no]' role='dimension' type='nominal' />
-            <column caption='Sitter Profiles First Aid Training Yes No' datatype='string' name='[sitter_profiles_first_aid_training_yes_no]' role='dimension' type='nominal' />
-            <column caption='Sitter Profiles Homework Help Yes No' datatype='string' name='[sitter_profiles_homework_help_yes_no]' role='dimension' type='nominal' />
             <column caption='Sitters User Id' datatype='string' name='[sitters_user_id]' role='dimension' type='nominal' />
-            <column caption='Swimming Supervision' datatype='string' name='[swimming_supervision]' role='dimension' type='nominal' />
-            <column caption='Travel With Family' datatype='string' name='[travel_with_family]' role='dimension' type='nominal' />
           </datasource-dependencies>
+          <filter class='categorical' column='[federated.15smuc91qg93nv19xlnjr1e2ehde].[none:age_range:nk]'>
+            <groupfilter function='member' level='[none:age_range:nk]' member='&quot;18-24&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.15smuc91qg93nv19xlnjr1e2ehde].[none:age_range:nk]</column>
+          </slices>
           <aggregation value='true' />
         </view>
         <style />
         <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
             <mark class='Automatic' />
-          </pane>
-          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[pcrk:cnt:crafts:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:laundry:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:light_housekeeping:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-          <pane id='4' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:meal_preparation:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-          <pane id='5' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:potty_training:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-          <pane id='6' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_childcare_access_to_transportation_yes_no:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-          <pane id='7' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_cpr_certified_yes_no:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-          <pane id='8' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_first_aid_training_yes_no:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-          <pane id='9' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_homework_help_yes_no:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-          <pane id='10' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitters_user_id:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-          <pane id='11' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:swimming_supervision:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-          <pane id='12' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:travel_with_family:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.15smuc91qg93nv19xlnjr1e2ehde].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
           </pane>
         </panes>
-        <rows>[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitters_user_id:qk]</rows>
-        <cols>([federated.15smuc91qg93nv19xlnjr1e2ehde].[pcrk:cnt:crafts:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:laundry:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:light_housekeeping:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:meal_preparation:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:potty_training:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_childcare_access_to_transportation_yes_no:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_cpr_certified_yes_no:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_first_aid_training_yes_no:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_homework_help_yes_no:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitters_user_id:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:swimming_supervision:qk] + [federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:travel_with_family:qk])))))))))))</cols>
+        <rows>[federated.15smuc91qg93nv19xlnjr1e2ehde].[none:age_range:nk]</rows>
+        <cols>([federated.15smuc91qg93nv19xlnjr1e2ehde].[none:potty_training:nk] * [federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitters_user_id:qk])</cols>
       </table>
       <simple-id uuid='{3E695B66-27DC-456D-B2E2-D62BDD8F3EC7}' />
     </worksheet>
