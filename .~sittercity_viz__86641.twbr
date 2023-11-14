@@ -1,0 +1,1414 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20223.22.1005.1835                               -->
+<workbook original-version='18.1' source-build='2022.3.0 (20223.22.1005.1835)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='rating_sitters_counties' inline='true' name='federated.15smuc91qg93nv19xlnjr1e2ehde' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='rating_sitters_counties' name='textscan.1fe98wd18tnp0a1em4r3x1qsu6b0'>
+            <connection class='textscan' directory='/Users/cmaldonado/Documents/2023-09-proj5-sittercity' filename='rating_sitters_counties.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1fe98wd18tnp0a1em4r3x1qsu6b0' name='rating_sitters_counties.csv' table='[rating_sitters_counties#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='sitters_user_id' ordinal='0' />
+            <column datatype='string' name='counties' ordinal='1' />
+            <column datatype='integer' name='sitters_member_id' ordinal='2' />
+            <column datatype='string' name='sitters_sitter_has_review_yes_no' ordinal='3' />
+            <column datatype='string' name='sitters_average_rating' ordinal='4' />
+            <column datatype='integer' name='sitters_total_number_of_reviews' ordinal='5' />
+            <column datatype='integer' name='sitters_birth_date' ordinal='6' />
+            <column datatype='string' name='sitters_gender' ordinal='7' />
+            <column datatype='integer' name='sitters_zipcode' ordinal='8' />
+            <column datatype='string' name='sitters_pay_min' ordinal='9' />
+            <column datatype='string' name='sitters_pay_max' ordinal='10' />
+            <column datatype='string' name='sitter_profiles_nanny_pay_rate' ordinal='11' />
+            <column datatype='string' name='sitters_care_type' ordinal='12' />
+            <column datatype='string' name='sitter_profiles_nanny_pay_min' ordinal='13' />
+            <column datatype='string' name='sitter_profiles_education_completed' ordinal='14' />
+            <column datatype='string' name='sitters_background_check_submitted_ever_yes_no' ordinal='15' />
+            <column datatype='integer' name='sitter_profiles_years_of_experience' ordinal='16' />
+            <column datatype='string' name='sitter_profiles_comfortable_with_pets_yes_no' ordinal='17' />
+            <column datatype='string' name='sitter_profiles_sick_children_yes_no' ordinal='18' />
+            <column datatype='string' name='sitter_profiles_smoker_yes_no' ordinal='19' />
+            <column datatype='string' name='sitter_profiles_childcare_profile_completed_yes_no' ordinal='20' />
+            <column datatype='string' name='sitter_profiles_childcare_reference_count' ordinal='21' />
+            <column datatype='string' name='sitter_profiles_homework_help_yes_no' ordinal='22' />
+            <column datatype='string' name='sitter_profiles_cpr_certified_yes_no' ordinal='23' />
+            <column datatype='string' name='sitter_profiles_first_aid_training_yes_no' ordinal='24' />
+            <column datatype='string' name='sitter_profiles_childcare_access_to_transportation_yes_no' ordinal='25' />
+            <column datatype='string' name='special_needs_yes_no' ordinal='26' />
+            <column datatype='string' name='sitters_city' ordinal='27' />
+            <column datatype='string' name='NA' ordinal='28' />
+            <column datatype='string' name='laundry' ordinal='29' />
+            <column datatype='string' name='travel_with_family' ordinal='30' />
+            <column datatype='string' name='potty_training' ordinal='31' />
+            <column datatype='string' name='crafts' ordinal='32' />
+            <column datatype='string' name='swimming_supervision' ordinal='33' />
+            <column datatype='string' name='light_housekeeping' ordinal='34' />
+            <column datatype='string' name='meal_preparation' ordinal='35' />
+            <column datatype='string' name='age_range' ordinal='36' />
+            <column datatype='real' name='mean_pay_rate_sitters' ordinal='37' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1fe98wd18tnp0a1em4r3x1qsu6b0' name='rating_sitters_counties.csv' table='[rating_sitters_counties#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='sitters_user_id' ordinal='0' />
+            <column datatype='string' name='counties' ordinal='1' />
+            <column datatype='integer' name='sitters_member_id' ordinal='2' />
+            <column datatype='string' name='sitters_sitter_has_review_yes_no' ordinal='3' />
+            <column datatype='string' name='sitters_average_rating' ordinal='4' />
+            <column datatype='integer' name='sitters_total_number_of_reviews' ordinal='5' />
+            <column datatype='integer' name='sitters_birth_date' ordinal='6' />
+            <column datatype='string' name='sitters_gender' ordinal='7' />
+            <column datatype='integer' name='sitters_zipcode' ordinal='8' />
+            <column datatype='string' name='sitters_pay_min' ordinal='9' />
+            <column datatype='string' name='sitters_pay_max' ordinal='10' />
+            <column datatype='string' name='sitter_profiles_nanny_pay_rate' ordinal='11' />
+            <column datatype='string' name='sitters_care_type' ordinal='12' />
+            <column datatype='string' name='sitter_profiles_nanny_pay_min' ordinal='13' />
+            <column datatype='string' name='sitter_profiles_education_completed' ordinal='14' />
+            <column datatype='string' name='sitters_background_check_submitted_ever_yes_no' ordinal='15' />
+            <column datatype='integer' name='sitter_profiles_years_of_experience' ordinal='16' />
+            <column datatype='string' name='sitter_profiles_comfortable_with_pets_yes_no' ordinal='17' />
+            <column datatype='string' name='sitter_profiles_sick_children_yes_no' ordinal='18' />
+            <column datatype='string' name='sitter_profiles_smoker_yes_no' ordinal='19' />
+            <column datatype='string' name='sitter_profiles_childcare_profile_completed_yes_no' ordinal='20' />
+            <column datatype='string' name='sitter_profiles_childcare_reference_count' ordinal='21' />
+            <column datatype='string' name='sitter_profiles_homework_help_yes_no' ordinal='22' />
+            <column datatype='string' name='sitter_profiles_cpr_certified_yes_no' ordinal='23' />
+            <column datatype='string' name='sitter_profiles_first_aid_training_yes_no' ordinal='24' />
+            <column datatype='string' name='sitter_profiles_childcare_access_to_transportation_yes_no' ordinal='25' />
+            <column datatype='string' name='special_needs_yes_no' ordinal='26' />
+            <column datatype='string' name='sitters_city' ordinal='27' />
+            <column datatype='string' name='NA' ordinal='28' />
+            <column datatype='string' name='laundry' ordinal='29' />
+            <column datatype='string' name='travel_with_family' ordinal='30' />
+            <column datatype='string' name='potty_training' ordinal='31' />
+            <column datatype='string' name='crafts' ordinal='32' />
+            <column datatype='string' name='swimming_supervision' ordinal='33' />
+            <column datatype='string' name='light_housekeeping' ordinal='34' />
+            <column datatype='string' name='meal_preparation' ordinal='35' />
+            <column datatype='string' name='age_range' ordinal='36' />
+            <column datatype='real' name='mean_pay_rate_sitters' ordinal='37' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitters_user_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitters_user_id]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitters_user_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>counties</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[counties]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>counties</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitters_member_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[sitters_member_id]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitters_member_id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitters_sitter_has_review_yes_no</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitters_sitter_has_review_yes_no]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitters_sitter_has_review_yes_no</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitters_average_rating</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitters_average_rating]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitters_average_rating</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitters_total_number_of_reviews</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[sitters_total_number_of_reviews]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitters_total_number_of_reviews</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitters_birth_date</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[sitters_birth_date]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitters_birth_date</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitters_gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitters_gender]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitters_gender</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitters_zipcode</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[sitters_zipcode]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitters_zipcode</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitters_pay_min</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitters_pay_min]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitters_pay_min</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitters_pay_max</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitters_pay_max]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitters_pay_max</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitter_profiles_nanny_pay_rate</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitter_profiles_nanny_pay_rate]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitter_profiles_nanny_pay_rate</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitters_care_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitters_care_type]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitters_care_type</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitter_profiles_nanny_pay_min</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitter_profiles_nanny_pay_min]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitter_profiles_nanny_pay_min</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitter_profiles_education_completed</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitter_profiles_education_completed]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitter_profiles_education_completed</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitters_background_check_submitted_ever_yes_no</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitters_background_check_submitted_ever_yes_no]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitters_background_check_submitted_ever_yes_no</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitter_profiles_years_of_experience</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[sitter_profiles_years_of_experience]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitter_profiles_years_of_experience</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitter_profiles_comfortable_with_pets_yes_no</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitter_profiles_comfortable_with_pets_yes_no]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitter_profiles_comfortable_with_pets_yes_no</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitter_profiles_sick_children_yes_no</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitter_profiles_sick_children_yes_no]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitter_profiles_sick_children_yes_no</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitter_profiles_smoker_yes_no</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitter_profiles_smoker_yes_no]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitter_profiles_smoker_yes_no</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitter_profiles_childcare_profile_completed_yes_no</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitter_profiles_childcare_profile_completed_yes_no]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitter_profiles_childcare_profile_completed_yes_no</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitter_profiles_childcare_reference_count</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitter_profiles_childcare_reference_count]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitter_profiles_childcare_reference_count</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitter_profiles_homework_help_yes_no</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitter_profiles_homework_help_yes_no]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitter_profiles_homework_help_yes_no</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitter_profiles_cpr_certified_yes_no</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitter_profiles_cpr_certified_yes_no]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitter_profiles_cpr_certified_yes_no</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitter_profiles_first_aid_training_yes_no</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitter_profiles_first_aid_training_yes_no]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitter_profiles_first_aid_training_yes_no</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitter_profiles_childcare_access_to_transportation_yes_no</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitter_profiles_childcare_access_to_transportation_yes_no]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitter_profiles_childcare_access_to_transportation_yes_no</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>special_needs_yes_no</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[special_needs_yes_no]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>special_needs_yes_no</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sitters_city</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sitters_city]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>sitters_city</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NA</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[NA]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>NA</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>laundry</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[laundry]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>laundry</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>travel_with_family</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[travel_with_family]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>travel_with_family</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>potty_training</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[potty_training]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>potty_training</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>crafts</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[crafts]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>crafts</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>swimming_supervision</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[swimming_supervision]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>swimming_supervision</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>light_housekeeping</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[light_housekeeping]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>light_housekeeping</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>meal_preparation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[meal_preparation]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>meal_preparation</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age_range</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[age_range]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>age_range</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mean_pay_rate_sitters</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[mean_pay_rate_sitters]</local-name>
+            <parent-name>[rating_sitters_counties.csv]</parent-name>
+            <remote-alias>mean_pay_rate_sitters</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='real' name='[Calculation1]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='RANK_PERCENTILE(COUNT([sitter_profiles_education_completed]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column datatype='real' name='[Calculation2]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='RANK_PERCENTILE(COUNT([sitters_user_id]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column datatype='integer' name='[Calculation3]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='RUNNING_SUM(COUNT([sitters_user_id]))'>
+          <table-calc ordering-type='Columns' />
+        </calculation>
+      </column>
+      <column datatype='real' default-format='p0.00%' name='[Calculation4]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT([sitters_user_id]) / TOTAL(COUNT([sitters_user_id]))'>
+          <table-calc ordering-type='Columns' />
+        </calculation>
+      </column>
+      <column aggregation='None' datatype='integer' name='[Sitter Profiles Years Of Experience (bin)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='0' formula='[sitter_profiles_years_of_experience]' peg='0' size='3.96' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='rating_sitters_counties.csv' datatype='table' name='[__tableau_internal_object_id__].[rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6]' role='measure' type='quantitative' />
+      <column caption='Age Range' datatype='string' name='[age_range]' role='dimension' type='nominal' />
+      <column caption='Counties' datatype='string' name='[counties]' role='dimension' type='nominal' />
+      <column caption='Crafts' datatype='string' name='[crafts]' role='dimension' type='nominal' />
+      <column caption='Laundry' datatype='string' name='[laundry]' role='dimension' type='nominal' />
+      <column caption='Light Housekeeping' datatype='string' name='[light_housekeeping]' role='dimension' type='nominal' />
+      <column caption='Meal Preparation' datatype='string' name='[meal_preparation]' role='dimension' type='nominal' />
+      <column caption='Mean Pay Rate Sitters' datatype='real' name='[mean_pay_rate_sitters]' role='dimension' type='ordinal' />
+      <column caption='Potty Training' datatype='string' name='[potty_training]' role='dimension' type='nominal' />
+      <column caption='Sitter Profiles Childcare Access To Transportation Yes No' datatype='string' name='[sitter_profiles_childcare_access_to_transportation_yes_no]' role='dimension' type='nominal' />
+      <column caption='Sitter Profiles Childcare Profile Completed Yes No' datatype='string' name='[sitter_profiles_childcare_profile_completed_yes_no]' role='dimension' type='nominal' />
+      <column caption='Sitter Profiles Childcare Reference Count' datatype='string' name='[sitter_profiles_childcare_reference_count]' role='dimension' type='nominal' />
+      <column caption='Sitter Profiles Comfortable With Pets Yes No' datatype='string' name='[sitter_profiles_comfortable_with_pets_yes_no]' role='dimension' type='nominal' />
+      <column caption='Sitter Profiles Cpr Certified Yes No' datatype='string' name='[sitter_profiles_cpr_certified_yes_no]' role='dimension' type='nominal' />
+      <column caption='Sitter Profiles Education Completed' datatype='string' name='[sitter_profiles_education_completed]' role='dimension' type='nominal' />
+      <column caption='Sitter Profiles First Aid Training Yes No' datatype='string' name='[sitter_profiles_first_aid_training_yes_no]' role='dimension' type='nominal' />
+      <column caption='Sitter Profiles Homework Help Yes No' datatype='string' name='[sitter_profiles_homework_help_yes_no]' role='dimension' type='nominal' />
+      <column caption='Sitter Profiles Nanny Pay Min' datatype='string' name='[sitter_profiles_nanny_pay_min]' role='dimension' type='nominal' />
+      <column caption='Sitter Profiles Nanny Pay Rate' datatype='string' name='[sitter_profiles_nanny_pay_rate]' role='dimension' type='nominal' />
+      <column caption='Sitter Profiles Sick Children Yes No' datatype='string' name='[sitter_profiles_sick_children_yes_no]' role='dimension' type='nominal' />
+      <column caption='Sitter Profiles Smoker Yes No' datatype='string' name='[sitter_profiles_smoker_yes_no]' role='dimension' type='nominal' />
+      <column caption='Sitter Profiles Years Of Experience' datatype='integer' name='[sitter_profiles_years_of_experience]' role='measure' type='quantitative' />
+      <column caption='Sitters Average Rating' datatype='string' name='[sitters_average_rating]' role='dimension' type='nominal' />
+      <column caption='Sitters Background Check Submitted Ever Yes No' datatype='string' name='[sitters_background_check_submitted_ever_yes_no]' role='dimension' type='nominal' />
+      <column caption='Sitters Birth Date' datatype='integer' name='[sitters_birth_date]' role='measure' type='quantitative' />
+      <column caption='Sitters Care Type' datatype='string' name='[sitters_care_type]' role='dimension' type='nominal' />
+      <column caption='Sitters City' datatype='string' name='[sitters_city]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Sitters Gender' datatype='string' name='[sitters_gender]' role='dimension' type='nominal' />
+      <column caption='Sitters Member Id' datatype='integer' name='[sitters_member_id]' role='dimension' type='ordinal' />
+      <column caption='Sitters Pay Max' datatype='string' name='[sitters_pay_max]' role='dimension' type='nominal' />
+      <column caption='Sitters Pay Min' datatype='string' name='[sitters_pay_min]' role='dimension' type='nominal' />
+      <column caption='Sitters Sitter Has Review Yes No' datatype='string' name='[sitters_sitter_has_review_yes_no]' role='dimension' type='nominal' />
+      <column caption='Sitters Total Number Of Reviews' datatype='integer' name='[sitters_total_number_of_reviews]' role='measure' type='quantitative' />
+      <column caption='Sitters User Id' datatype='string' name='[sitters_user_id]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Sitters Zipcode' datatype='integer' default-format='*00000' name='[sitters_zipcode]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column caption='Special Needs Yes No' datatype='string' name='[special_needs_yes_no]' role='dimension' type='nominal' />
+      <column caption='Swimming Supervision' datatype='string' name='[swimming_supervision]' role='dimension' type='nominal' />
+      <column caption='Travel With Family' datatype='string' name='[travel_with_family]' role='dimension' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='rating_sitters_counties.csv' id='rating_sitters_counties.csv_C793413FCD7C43C693E3351CA8BF8BB6'>
+            <properties context=''>
+              <relation connection='textscan.1fe98wd18tnp0a1em4r3x1qsu6b0' name='rating_sitters_counties.csv' table='[rating_sitters_counties#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='sitters_user_id' ordinal='0' />
+                  <column datatype='string' name='counties' ordinal='1' />
+                  <column datatype='integer' name='sitters_member_id' ordinal='2' />
+                  <column datatype='string' name='sitters_sitter_has_review_yes_no' ordinal='3' />
+                  <column datatype='string' name='sitters_average_rating' ordinal='4' />
+                  <column datatype='integer' name='sitters_total_number_of_reviews' ordinal='5' />
+                  <column datatype='integer' name='sitters_birth_date' ordinal='6' />
+                  <column datatype='string' name='sitters_gender' ordinal='7' />
+                  <column datatype='integer' name='sitters_zipcode' ordinal='8' />
+                  <column datatype='string' name='sitters_pay_min' ordinal='9' />
+                  <column datatype='string' name='sitters_pay_max' ordinal='10' />
+                  <column datatype='string' name='sitter_profiles_nanny_pay_rate' ordinal='11' />
+                  <column datatype='string' name='sitters_care_type' ordinal='12' />
+                  <column datatype='string' name='sitter_profiles_nanny_pay_min' ordinal='13' />
+                  <column datatype='string' name='sitter_profiles_education_completed' ordinal='14' />
+                  <column datatype='string' name='sitters_background_check_submitted_ever_yes_no' ordinal='15' />
+                  <column datatype='integer' name='sitter_profiles_years_of_experience' ordinal='16' />
+                  <column datatype='string' name='sitter_profiles_comfortable_with_pets_yes_no' ordinal='17' />
+                  <column datatype='string' name='sitter_profiles_sick_children_yes_no' ordinal='18' />
+                  <column datatype='string' name='sitter_profiles_smoker_yes_no' ordinal='19' />
+                  <column datatype='string' name='sitter_profiles_childcare_profile_completed_yes_no' ordinal='20' />
+                  <column datatype='string' name='sitter_profiles_childcare_reference_count' ordinal='21' />
+                  <column datatype='string' name='sitter_profiles_homework_help_yes_no' ordinal='22' />
+                  <column datatype='string' name='sitter_profiles_cpr_certified_yes_no' ordinal='23' />
+                  <column datatype='string' name='sitter_profiles_first_aid_training_yes_no' ordinal='24' />
+                  <column datatype='string' name='sitter_profiles_childcare_access_to_transportation_yes_no' ordinal='25' />
+                  <column datatype='string' name='special_needs_yes_no' ordinal='26' />
+                  <column datatype='string' name='sitters_city' ordinal='27' />
+                  <column datatype='string' name='NA' ordinal='28' />
+                  <column datatype='string' name='laundry' ordinal='29' />
+                  <column datatype='string' name='travel_with_family' ordinal='30' />
+                  <column datatype='string' name='potty_training' ordinal='31' />
+                  <column datatype='string' name='crafts' ordinal='32' />
+                  <column datatype='string' name='swimming_supervision' ordinal='33' />
+                  <column datatype='string' name='light_housekeeping' ordinal='34' />
+                  <column datatype='string' name='meal_preparation' ordinal='35' />
+                  <column datatype='string' name='age_range' ordinal='36' />
+                  <column datatype='real' name='mean_pay_rate_sitters' ordinal='37' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Sitters Age Range (18-24) Years of Experience in MA</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='rating_sitters_counties' name='federated.15smuc91qg93nv19xlnjr1e2ehde' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15smuc91qg93nv19xlnjr1e2ehde'>
+            <column aggregation='None' datatype='integer' name='[Sitter Profiles Years Of Experience (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='0' formula='[sitter_profiles_years_of_experience]' peg='0' size='3.96' />
+            </column>
+            <column caption='Age Range' datatype='string' name='[age_range]' role='dimension' type='nominal' />
+            <column-instance column='[sitter_profiles_years_of_experience]' derivation='Count' name='[cnt:sitter_profiles_years_of_experience:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sitter Profiles Years Of Experience (bin)]' derivation='None' name='[none:Sitter Profiles Years Of Experience (bin):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[age_range]' derivation='None' name='[none:age_range:nk]' pivot='key' type='nominal' />
+            <column caption='Sitter Profiles Years Of Experience' datatype='integer' name='[sitter_profiles_years_of_experience]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.15smuc91qg93nv19xlnjr1e2ehde].[none:age_range:nk]'>
+            <groupfilter function='member' level='[none:age_range:nk]' member='&quot;18-24&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.15smuc91qg93nv19xlnjr1e2ehde].[none:age_range:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing custom-mark-size-in-axis-units='1.0' mark-alignment='mark-alignment-left' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='false' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#d37295' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.15smuc91qg93nv19xlnjr1e2ehde].[none:age_range:nk] * [federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_years_of_experience:qk])</rows>
+        <cols>[federated.15smuc91qg93nv19xlnjr1e2ehde].[none:Sitter Profiles Years Of Experience (bin):qk]</cols>
+        <show-full-range>
+          <column>[federated.15smuc91qg93nv19xlnjr1e2ehde].[Sitter Profiles Years Of Experience (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{05F588CB-DE33-4423-BADA-9BC42951EF43}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Age Range of Sitters in MA</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='rating_sitters_counties' name='federated.15smuc91qg93nv19xlnjr1e2ehde' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15smuc91qg93nv19xlnjr1e2ehde'>
+            <column caption='Age Range' datatype='string' name='[age_range]' role='dimension' type='nominal' />
+            <column-instance column='[age_range]' derivation='None' name='[none:age_range:nk]' pivot='key' type='nominal' />
+            <column-instance column='[sitters_member_id]' derivation='Count' name='[pcto:cnt:sitters_member_id:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Columns' type='PctTotal' />
+            </column-instance>
+            <column caption='Sitters Member Id' datatype='integer' name='[sitters_member_id]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#d37295' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.15smuc91qg93nv19xlnjr1e2ehde].[none:age_range:nk]</rows>
+        <cols>[federated.15smuc91qg93nv19xlnjr1e2ehde].[pcto:cnt:sitters_member_id:qk]</cols>
+      </table>
+      <simple-id uuid='{87BFC82D-999E-4459-B364-B7B8C48E9C07}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Average Hourly Mean Pay Rate of Sitters by County in MA</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='rating_sitters_counties' name='federated.15smuc91qg93nv19xlnjr1e2ehde' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15smuc91qg93nv19xlnjr1e2ehde'>
+            <column-instance column='[mean_pay_rate_sitters]' derivation='Avg' name='[avg:mean_pay_rate_sitters:qk]' pivot='key' type='quantitative' />
+            <column caption='Counties' datatype='string' name='[counties]' role='dimension' type='nominal' />
+            <column caption='Mean Pay Rate Sitters' datatype='real' name='[mean_pay_rate_sitters]' role='dimension' type='ordinal' />
+            <column-instance column='[counties]' derivation='None' name='[none:counties:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.15smuc91qg93nv19xlnjr1e2ehde].[none:counties:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.15smuc91qg93nv19xlnjr1e2ehde].[avg:mean_pay_rate_sitters:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='467' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.15smuc91qg93nv19xlnjr1e2ehde].[avg:mean_pay_rate_sitters:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#d37295' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.15smuc91qg93nv19xlnjr1e2ehde].[none:counties:nk]</rows>
+        <cols>[federated.15smuc91qg93nv19xlnjr1e2ehde].[avg:mean_pay_rate_sitters:qk]</cols>
+      </table>
+      <simple-id uuid='{2C854A89-0E89-44A5-A55D-28FB2D695D96}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Total Number of Sitters by County in MA</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='rating_sitters_counties' name='federated.15smuc91qg93nv19xlnjr1e2ehde' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.15smuc91qg93nv19xlnjr1e2ehde'>
+            <column-instance column='[sitters_user_id]' derivation='Count' name='[cnt:sitters_user_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Counties' datatype='string' name='[counties]' role='dimension' type='nominal' />
+            <column-instance column='[counties]' derivation='None' name='[none:counties:nk]' pivot='key' type='nominal' />
+            <column-instance column='[sitters_zipcode]' derivation='None' name='[none:sitters_zipcode:ok]' pivot='key' type='ordinal' />
+            <column caption='Sitters User Id' datatype='string' name='[sitters_user_id]' role='dimension' type='nominal' />
+            <column aggregation='Sum' caption='Sitters Zipcode' datatype='integer' default-format='*00000' name='[sitters_zipcode]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.15smuc91qg93nv19xlnjr1e2ehde].[Longitude (generated)]' field-type='quantitative' max='-7650615.6106489804' min='-8241173.2503311234' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.15smuc91qg93nv19xlnjr1e2ehde].[Latitude (generated)]' field-type='quantitative' max='5289454.3448200254' min='5116997.0141761648' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitters_user_id:qk]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#f0e2ef</color>
+                <color>#efd3ed</color>
+                <color>#eec4ec</color>
+                <color>#edb6ea</color>
+                <color>#eca8e9</color>
+                <color>#eb99e7</color>
+                <color>#ea8be6</color>
+                <color>#e97de4</color>
+                <color>#e86fe3</color>
+                <color>#e762e2</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitters_user_id:qk]' value='Number of Sitters'>
+              <formatted-text>
+                <run>Number of Sitters</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Multipolygon' />
+            <encodings>
+              <color column='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitters_user_id:qk]' />
+              <text column='[federated.15smuc91qg93nv19xlnjr1e2ehde].[none:counties:nk]' />
+              <lod column='[federated.15smuc91qg93nv19xlnjr1e2ehde].[none:sitters_zipcode:ok]' />
+              <geometry column='[federated.15smuc91qg93nv19xlnjr1e2ehde].[Geometry (generated)]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.15smuc91qg93nv19xlnjr1e2ehde].[Latitude (generated)]</rows>
+        <cols>[federated.15smuc91qg93nv19xlnjr1e2ehde].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{2837231A-EED6-40C2-9F5B-4FC4094D8F3F}' />
+    </worksheet>
+    <worksheet name='Sheet 5'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='rating_sitters_counties' name='federated.15smuc91qg93nv19xlnjr1e2ehde' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15smuc91qg93nv19xlnjr1e2ehde'>
+            <column-instance column='[laundry]' derivation='Count' name='[cnt:laundry:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[light_housekeeping]' derivation='Count' name='[cnt:light_housekeeping:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[meal_preparation]' derivation='Count' name='[cnt:meal_preparation:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[potty_training]' derivation='Count' name='[cnt:potty_training:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[sitter_profiles_childcare_access_to_transportation_yes_no]' derivation='Count' name='[cnt:sitter_profiles_childcare_access_to_transportation_yes_no:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[sitter_profiles_cpr_certified_yes_no]' derivation='Count' name='[cnt:sitter_profiles_cpr_certified_yes_no:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[sitter_profiles_first_aid_training_yes_no]' derivation='Count' name='[cnt:sitter_profiles_first_aid_training_yes_no:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[sitter_profiles_homework_help_yes_no]' derivation='Count' name='[cnt:sitter_profiles_homework_help_yes_no:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[sitters_user_id]' derivation='Count' name='[cnt:sitters_user_id:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[swimming_supervision]' derivation='Count' name='[cnt:swimming_supervision:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[travel_with_family]' derivation='Count' name='[cnt:travel_with_family:qk]' pivot='key' type='quantitative' />
+            <column caption='Crafts' datatype='string' name='[crafts]' role='dimension' type='nominal' />
+            <column caption='Laundry' datatype='string' name='[laundry]' role='dimension' type='nominal' />
+            <column caption='Light Housekeeping' datatype='string' name='[light_housekeeping]' role='dimension' type='nominal' />
+            <column caption='Meal Preparation' datatype='string' name='[meal_preparation]' role='dimension' type='nominal' />
+            <column-instance column='[crafts]' derivation='Count' name='[pcrk:cnt:crafts:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' rank-options='Competition,Ascending' type='PctRank' />
+            </column-instance>
+            <column caption='Potty Training' datatype='string' name='[potty_training]' role='dimension' type='nominal' />
+            <column caption='Sitter Profiles Childcare Access To Transportation Yes No' datatype='string' name='[sitter_profiles_childcare_access_to_transportation_yes_no]' role='dimension' type='nominal' />
+            <column caption='Sitter Profiles Cpr Certified Yes No' datatype='string' name='[sitter_profiles_cpr_certified_yes_no]' role='dimension' type='nominal' />
+            <column caption='Sitter Profiles First Aid Training Yes No' datatype='string' name='[sitter_profiles_first_aid_training_yes_no]' role='dimension' type='nominal' />
+            <column caption='Sitter Profiles Homework Help Yes No' datatype='string' name='[sitter_profiles_homework_help_yes_no]' role='dimension' type='nominal' />
+            <column caption='Sitters User Id' datatype='string' name='[sitters_user_id]' role='dimension' type='nominal' />
+            <column caption='Swimming Supervision' datatype='string' name='[swimming_supervision]' role='dimension' type='nominal' />
+            <column caption='Travel With Family' datatype='string' name='[travel_with_family]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[pcrk:cnt:crafts:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:laundry:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:light_housekeeping:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:meal_preparation:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:potty_training:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='6' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_childcare_access_to_transportation_yes_no:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='7' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_cpr_certified_yes_no:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='8' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_first_aid_training_yes_no:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='9' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_homework_help_yes_no:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='10' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitters_user_id:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='11' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:swimming_supervision:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='12' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:travel_with_family:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitters_user_id:qk]</rows>
+        <cols>([federated.15smuc91qg93nv19xlnjr1e2ehde].[pcrk:cnt:crafts:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:laundry:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:light_housekeeping:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:meal_preparation:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:potty_training:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_childcare_access_to_transportation_yes_no:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_cpr_certified_yes_no:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_first_aid_training_yes_no:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitter_profiles_homework_help_yes_no:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitters_user_id:qk] + ([federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:swimming_supervision:qk] + [federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:travel_with_family:qk])))))))))))</cols>
+      </table>
+      <simple-id uuid='{3E695B66-27DC-456D-B2E2-D62BDD8F3EC7}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='sittercity_dashboard'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' preset-index='1' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='16' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='14' type-v2='layout-basic' w='82400' x='800' y='1000'>
+              <zone h='29125' id='3' name='Sheet 1' w='82400' x='800' y='69875'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='32666' id='10' name='Sheet 2' w='82400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='36209' id='13' name='Sheet 4' w='82400' x='800' y='33666'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98000' id='15' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='1000'>
+              <zone h='8125' id='17' name='Sheet 4' pane-specification-id='0' param='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitters_user_id:qk]' type-v2='color' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='800' minheight='800' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='19' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='18' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='253' h='32666' id='10' is-fixed='true' name='Sheet 2' w='82400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46084' id='13' is-fixed='true' name='Sheet 4' w='82400' x='800' y='33666'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8125' id='17' name='Sheet 4' pane-specification-id='0' param='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitters_user_id:qk]' type-v2='color' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='146' h='19250' id='3' is-fixed='true' name='Sheet 1' w='82400' x='800' y='79750'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{AFEC5917-68B6-42BB-9A54-075928972CCC}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{9F1E5BAE-9E8C-4D5E-AB05-98F8069F71BE}' />
+    </window>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='159'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{ADE19899-640A-448E-8237-67237E2AA912}' />
+    </window>
+    <window class='dashboard' name='sittercity_dashboard'>
+      <viewpoints>
+        <viewpoint name='Sheet 1' />
+        <viewpoint name='Sheet 2' />
+        <viewpoint name='Sheet 4'>
+          <zoom type='entire-view' />
+          <default-map-tool-selection tool='2' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{C9F67248-BBF2-4166-926C-2B5758403553}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{59DC6651-47B2-4C60-8A7D-C01627DC36A4}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.15smuc91qg93nv19xlnjr1e2ehde].[cnt:sitters_user_id:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{06B75A4A-E7FF-47EA-B8FB-64DDC4E6ED6C}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 5'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B9EA6C93-5825-4C29-8443-FBB9530780F1}' />
+    </window>
+  </windows>
+</workbook>
