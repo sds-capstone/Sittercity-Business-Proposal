@@ -3,7 +3,6 @@ title: "siiters_eda"
 format: html
 editor: visual
 ---
-
 ## 
 
 ```{r}
@@ -18,6 +17,7 @@ library(stringr)
 ```{r}
 #reading sitters dataset 
 data <- read_csv("data/sitters_data.csv")
+ratings <- read_csv("data/rating_sitters.csv")
 ```
 
 ```{r}
@@ -25,6 +25,9 @@ data <- read_csv("data/sitters_data.csv")
 
 #renaming columns with underscore and lowercase for better use
 data <- data %>%
+        clean_names()
+
+ratings <- ratings %>%
         clean_names()
 
 #splitting numbers into min and max columns 
@@ -85,10 +88,12 @@ grepl("01002| 01075| 01027| 01060| 01007| 01003| 01082| 01062| 01073| 01033| 010
 
 ```
 
+
 ##N/A clean data
+
 ```{r}
-data_counties <-
-data_counties[!is.na(data_counties$sitters_birth_date), ]
+##N/A data
+data_counties <- data_counties[!is.na(data_counties$sitters_birth_date), ]
 round(data_wide$sitters_birth_date, digits = 0)
 ```
 
@@ -102,4 +107,40 @@ avg_age_counties$mean_age<- round(avg_age_counties$mean_age, digits = 0)
 
 ```
 
+
+
+```{r}
+#merging data and ratings dataset together 
+rating_sitters <- ratings %>%
+  inner_join(data, by = c("sitters_member_id" = "sitters_member_id", "sitters_user_id" = "sitters_user_id"))
+```
+
+```{r}
+# age from dob for ratings sitters
+rating_sitters$sitters_birth_date = as.numeric(difftime(Sys.Date(),rating_sitters$sitters_birth_date, units = "weeks"))/52.25
+
+rating_sitters$sitters_birth_date<- round(rating_sitters$sitters_birth_date, digits = 0)
+
+```
+
+
+
+```{r}
+#Are older sitters more likely to get better ratings
+#Anova 
+
+anova_rating <- aov(sitters_birth_date~sitters_average_rating, data = rating_sitters)
+
+summary(anova_rating)
+
+```
+
+
+
+
+```{r}
+#logistic regression 
+educ_lm <- lm(sitters_birth_date~sitter_profiles_education_completed, data = rating_sitters)
+summary(educ_lm)
+```
 

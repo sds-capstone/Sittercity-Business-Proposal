@@ -105,7 +105,6 @@ proportion_cityname <- proportions %>%
 ```
 
 ```{r}
-<<<<<<< HEAD
 # Load the dplyr package if not already loaded
 library(dplyr)
 
@@ -118,8 +117,6 @@ top_babysitter_cities_states <- merged_data %>%
 # Print the top babysitter cities and states for account: provider type
 print(top_babysitter_cities_states)
 
-
-=======
 #plot 
 ggplot(data = proportions , aes(x = cityname , y = count, fill = provider_type)) + geom_col() + scale_fill_brewer(palette = "Paired") +
   scale_fill_brewer(palette = "Paired")+
@@ -138,12 +135,12 @@ barplot <- ggplot(proportion_cityname, aes(x = cityname, y = count, fill = provi
   theme(axis.text.x = element_blank(),
         axis.ticks.x = element_blank())
 barplot
->>>>>>> 7d87a5a5904bae4266ef29d79fbfbced21d3bba4
+
 
 ```
 
 ```{r}
-<<<<<<< HEAD
+
 # Load the dplyr package if not already loaded
 library(dplyr)
 
@@ -158,7 +155,10 @@ print(top_city_seekers)
 
 
 ```
-=======
+
+
+
+```{r}
 #plot 
 ggplot(data = proportions , aes(x = stateabbr , y = count, fill = provider_type)) + geom_col() + scale_fill_brewer(palette = "Paired") +
   scale_fill_brewer(palette = "Paired")+
@@ -179,6 +179,7 @@ barplot <- ggplot(proportions, aes(x = stateabbr, y = count, fill = provider_typ
 barplot
 
 ```
+
 
 ```{r}
 
@@ -212,4 +213,4 @@ plot_usmap(data = df_by_state, values = "count", regions = "states", color = "bl
         legend.position = "right") +
   facet_wrap(~Category)
 ```
->>>>>>> 7d87a5a5904bae4266ef29d79fbfbced21d3bba4
+
