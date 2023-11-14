@@ -3,7 +3,10 @@ title: "siiters_eda"
 format: html
 editor: visual
 ---
+
+
 ## 
+
 
 ```{r}
 #loading libraries
@@ -49,7 +52,9 @@ data <- data %>%
 
 ```
 
-# Wrangling
+
+# Wrangling 
+
 
 ```{r}
 #calculating age based on birthdate 
@@ -90,13 +95,11 @@ grepl("01002| 01075| 01027| 01060| 01007| 01003| 01082| 01062| 01073| 01033| 010
 
 ```
 
-
 ```{r}
 ##N/A data
 data_counties <- data_counties[!is.na(data_counties$sitters_birth_date), ]
 round(data_wide$sitters_birth_date, digits = 0)
 ```
-
 
 ```{r}
 avg_age_counties<- data_counties %>%
@@ -106,7 +109,6 @@ summarize(mean_age= mean(sitters_birth_date))
 avg_age_counties$mean_age<- round(avg_age_counties$mean_age, digits = 0)
 
 ```
-
 
 ```{r}
 #merging data and ratings dataset together 
@@ -175,85 +177,39 @@ rating_sitters_wide <- rating_sitters_wide %>%
    mutate(mean_pay_rate_sitters=(as.numeric(sitters_pay_min) + as.numeric(sitters_pay_max))/2)
 ```
 
-# Regression Calculations - Full data
+```{r}
+#create ranges for ratings
+
+
+
+
+#create ranges for years of experience
+
+rating_sitters_counties <- rating_sitters_counties 
+```
+
+
+# Regression Calculations 
+
 
 ```{r}
 library(moderndive)
 
 #Regression idea: Do sitters with more years of experience and lower levels of education get paid more than those with higher level of education and less years of experience? 
 
-#getting rid of random negative numbers 
-rating_sitters_model <- rating_sitters_model %>% 
-  filter(sitter_profiles_years_of_experience >= 0) %>% 
-  filter(sitter_profiles_years_of_experience <=40) %>% 
-  filter(mean_pay_rate_sitters <=40)
+rating_sitters_model <- rating_sitters_wide %>% 
+  group_by(sitters_average_rating)
 
-rating_sitters_model <- rating_sitters_model %>% 
-  drop_na(sitter_profiles_education_completed)
-
-sitters_rating_model<- lm(mean_pay_rate_sitters ~ sitter_profiles_years_of_experience * sitter_profiles_education_completed, data= rating_sitters_model)
+sitters_rating_model<- lm(mean_pay_rate_sitters ~ sitter_profiles_years_of_experience * age_range, data= rating_sitters_model)
 
 get_regression_table(sitters_rating_model)
-summary(sitters_rating_model)
-```
-
-```{r}
-#visualize regression 
-
-library(stargazer)
-stargazer(sitters_rating_model, type = "text")
-
-ggplot(data = rating_sitters_model, aes(x = sitter_profiles_years_of_experience, y = mean_pay_rate_sitters, color = sitter_profiles_education_completed)) + geom_smooth(se=FALSE) +
-ylab("Mean Pay Rate of Sitters") +
-xlab("Years of Experience of Sitters") + ggtitle("Regression Model with Sitters in MA") +
-  theme(axis.text.x = element_blank(),
-        axis.ticks.x = element_blank()) +
-  labs(color = "Level of Education")
+summary(aov(sitters_rating_model))
 
 ```
 
-# Regression Calculations - Partial data (MA)
 
-```{r}
-#getting rid of random negative numbers 
-rating_sitters_counties <- rating_sitters_counties %>% 
-  filter(sitter_profiles_years_of_experience >= 0) %>% 
-  filter(sitter_profiles_years_of_experience <=40) %>% 
-  filter(mean_pay_rate_sitters <=40)
+# Visualizations for Memo 
 
-rating_sitters_counties<- rating_sitters_counties %>% 
-  drop_na(sitter_profiles_education_completed)
-
-rating_sitters_MA <- lm(mean_pay_rate_sitters ~ sitter_profiles_years_of_experience * sitter_profiles_education_completed, data= rating_sitters_counties)
-
-get_regression_table(rating_sitters_MA )
-summary(rating_sitters_MA)
-```
-
-```{r}
-
-ggplot(data = rating_sitters_counties, aes(x = sitter_profiles_years_of_experience, y = mean_pay_rate_sitters, color = sitter_profiles_education_completed)) + geom_point() +  geom_smooth()
-```
-
-# Visualizations for Memo
-
-```{r}
-
-#visualizing historgram to see spread of years of experience 
-rating_sitters_model <- rating_sitters_model %>% 
-  filter(sitter_profiles_years_of_experience >= 0) %>% 
-  filter(sitter_profiles_years_of_experience <=40)
-  
-histogram <- ggplot(data = rating_sitters_MA, mapping = aes(x = sitter_profiles_years_of_experience)) +
-  geom_histogram(color = "white", fill = "steelblue")
-histogram
-```
-
-```{r}
-histogram_age <- ggplot(data = rating_sitters_model, mapping = aes(x = sitters_birth_date)) +
-  geom_histogram(color = "white", fill = "steelblue")
-histogram_age
-```
 
 ```{r}
 #add counties column to rating_sitters_wide 
@@ -267,11 +223,8 @@ data_counties <- data_counties %>%
 rating_sitters_counties <- data_counties %>%
   inner_join(rating_sitters_wide, by = c("sitters_user_id" = "sitters_user_id"))
 
-
-#exporting rating_sitters_counties
-write.csv(rating_sitters_counties, "rating_sitters_experience_range.csv", row.names=FALSE)
-
-
+#exporting rating_sitters_model
+write.csv(rating_sitters_counties, "rating_sitters_counties.csv", row.names=FALSE)
 
 ```
 
@@ -330,3 +283,12 @@ plot_6 <- rating_sitters_model %>%
   
   
 ```
+
+```{r}
+#hourly pay rate of age range "18-24"|"25-34"
+
+
+
+
+```
+
