@@ -1,0 +1,138 @@
+---
+title: "Untitled"
+output: html_document
+date: "2023-11-28"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Assuming your dataset is named 'sitter_data'
+# Load required libraries
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(readr)
+sitters_data <- read_csv("rating_sitters_experience_range.csv")
+View(sitters_data)
+```
+
+
+# Calculate the percentage of each age range providing additional services
+```{r}
+age_range_counts <- sitters_data %>%
+  group_by(age_range) %>%
+  summarize(count = n())
+View(age_range_counts)
+```
+
+
+```{r}
+additional_services_counts <- sitters_data %>%
+  group_by(age_range) %>%
+  summarize(
+    meal_preparation_count = sum(meal_preparation == "Yes", na.rm = TRUE),
+    crafts_count = sum(crafts == "Yes", na.rm = TRUE),
+    laundry_count = sum(laundry == "Yes", na.rm = TRUE),
+    potty_training_count=sum(potty_training == "Yes", na.rm = TRUE),
+    swimming_supervision_count =sum(swimming_supervision == "Yes", na.rm = TRUE),
+    light_housekeeping_count = sum(light_housekeeping == "Yes", na.rm = TRUE)
+  )
+
+View(additional_services_counts)
+
+```
+
+```{r}
+# Assuming 'additional_services_counts' is your summarized data
+
+# Load the necessary libraries
+library(ggplot2)
+library(tidyr)
+
+# Reshape the data for easier plotting
+plot_data <- additional_services_counts %>%
+  pivot_longer(cols = c(meal_preparation_count, crafts_count, light_housekeeping_count,laundry_count, potty_training_count,swimming_supervision_count),
+               names_to = "Service",
+               values_to = "Count")
+
+# Create a grouped bar plot
+ggplot(plot_data, aes(x = age_range, y = Count, fill = Service)) +
+  geom_bar(stat = "identity", position = "dodge", color = "black") +
+  labs(title = "Additional Services Counts by Age Range",
+       y = "Count",
+       x = "Age Range") +
+   scale_fill_brewer(palette = "Set3") +  # Using a Set3 color palette
+  theme_minimal()
+
+```
+
+---------------------------------------------------------------------------------------------------------
+
+
+
+# Filter for age range 18-24
+```{r}
+sitter_data_18_24 <- sitters_data %>%
+  filter(age_range == "18-24")
+```
+
+
+# Create a new variable for education category
+```{r}
+sitter_data_18_24 <- sitter_data_18_24 %>%
+  mutate(
+    education_category = case_when(
+      sitter_profiles_education_completed %in% c("Some College", "College Degree", "Graduate Degree") ~ "College Student",
+      TRUE ~ "Non-College Student"
+    )
+  )
+```
+
+
+# Count of additional services for each education category within age range 18-24
+```{r}
+additional_services_counts_18_24 <- sitter_data_18_24 %>%
+  group_by(education_category) %>%
+  summarize(
+   meal_preparation_count = sum(meal_preparation == "Yes", na.rm = TRUE),
+    crafts_count = sum(crafts == "Yes", na.rm = TRUE),
+    laundry_count = sum(laundry == "Yes", na.rm = TRUE),
+    potty_training_count=sum(potty_training == "Yes", na.rm = TRUE),
+    swimming_supervision_count =sum(swimming_supervision == "Yes", na.rm = TRUE),
+    light_housekeeping_count = sum(light_housekeeping == "Yes", na.rm = TRUE)
+  )
+```
+
+
+# Print the result
+```{r}
+print(additional_services_counts_18_24)
+```
+```{r}
+# Assuming 'additional_services_counts_18_24' is your summarized data
+
+# Load the necessary libraries
+library(ggplot2)
+
+# Reshape the data for easier plotting
+plot_data <- additional_services_counts_18_24 %>%
+  pivot_longer(cols = c(meal_preparation_count, crafts_count, light_housekeeping_count,laundry_count, potty_training_count,swimming_supervision_count),
+               names_to = "Service",
+               values_to = "Count")
+
+# Create a grouped bar plot
+ggplot(plot_data, aes(x = education_category, y = Count, fill = Service)) +
+  geom_bar(stat = "identity", position = "dodge", color = "black") +
+  labs(title = "Additional Services Counts for Age Range 18-24 by Education Category",
+       y = "Count",
+       x = "Education Category") +
+   scale_fill_brewer(palette = "Set3") +  # Using a Set3 color palette
+  theme_minimal()
+
+
+
+```
+
