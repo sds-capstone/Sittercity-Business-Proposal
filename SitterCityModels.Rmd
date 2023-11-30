@@ -1,0 +1,115 @@
+---
+title: "SitterCityModel"
+output: html_document
+date: "2023-10-26"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+##Assessing Conditions
+
+Logistic regression on:
+ being in college/education level at categorical level
+ 
+```{r}
+df <- na.omit(df)
+```
+
+
+##Linearity
+
+```{r}
+library(performance)
+library(see)
+
+price_mileage_model <- lm(Price ~ Mileage, data = AccordPrice)
+linearity_check <- check_model(price_mileage_model, check="linearity",
+                              panel=FALSE
+                              )
+plot(linearity_check, data=price_mileage_model)
+```
+##ANOVA
+
+##
+```{r}
+##Null hypothesis (H0): There is no significant difference in the price minimum for sitters based on their level of college education.
+
+##Alternative hypothesis (H1): There is a significant difference in the price minimum for sitters based on their level of college education.
+
+# Assuming your data frame is named 'your_data_frame_name'
+library(dplyr)
+
+# Filtering out rows with missing values in the specified columns
+cleaned_data <- data_counties %>%
+  filter(!is.na(sitters_pay_min), !is.na(sitter_profiles_education_completed))
+
+# Use the cleaned_data for further analysis
+library(dplyr)
+
+
+sitter_model<-lm(sitters_pay_min ~ sitter_profiles_education_completed, data = cleaned_data)
+
+anova(sitter_model)
+```
+
+
+```{r}
+library(ggplot2)
+
+# Assuming cleaned_data is your cleaned data frame
+ggplot(cleaned_data, aes(x = sitters_pay_min, fill = as.factor(sitter_profiles_education_completed))) +
+  geom_histogram(position = "identity", bins = 30, alpha = 0.7) +
+  labs(x = "Sitters Pay Minimum", y = "Frequency", title = "Histogram of Sitters Pay Minimum by Education Completed") +
+  scale_fill_discrete(name = "Education Completed") +
+  theme_minimal()
+```
+
+```{r}
+library(ggplot2)
+
+# Assuming cleaned_data is your cleaned data frame
+ggplot(cleaned_data, aes(x = sitters_pay_min, fill = as.factor(sitter_profiles_education_completed))) +
+  geom_histogram(bins = 30, alpha = 0.7, position = "identity") +
+  labs(x = "Sitters Pay Minimum", y = "Count", title = "Histogram of Sitters Pay Minimum by Education Completed") +
+  scale_fill_discrete(name = "Education Completed") +
+  theme_minimal()
+
+```
+
+```{r}
+library(ggplot2)
+
+# Assuming cleaned_data is your cleaned data frame
+ggplot(cleaned_data, aes(x = as.factor(sitters_pay_min), fill = as.factor(sitter_profiles_education_completed))) +
+  geom_bar(alpha = 0.7) +
+  labs(x = "Sitters Pay Minimum", y = "Count", title = "Bar Plot of Sitters Pay Minimum by Education Completed") +
+  scale_fill_discrete(name = "Education Completed") +
+  theme_minimal()
+
+```
+
+
+
+```{r}
+library(ggplot2)
+
+# Assuming cleaned_data is your cleaned data frame
+ggplot(cleaned_data, aes(x = as.factor(sitter_profiles_education_completed), fill = as.factor(sitter_profiles_education_completed))) +
+  geom_bar(alpha = 0.7) +
+  labs(x = "Education Completed", y = "Count", title = "Histogram of Sitters Pay Minimum by Education Completed") +
+  scale_fill_discrete(name = "Education Completed") +
+  theme_minimal()
+
+```
+```{r}
+data_filtered ; sitters_data 
+##filter out Account::Provider 
+filter out years of experience 
+education completed 
+count sitter profiles additional services 
+sitter backgound check completed 
+find the percentage of how many people offer addtional service 
+
+```
+

@@ -3,6 +3,7 @@ title: "siiters_eda"
 format: html
 editor: visual
 ---
+
 ## 
 
 ```{r}
@@ -49,8 +50,6 @@ data <- data %>%
 
 ```
 
-# Wrangling
-
 ```{r}
 #calculating age based on birthdate 
 #installing package to calculate age 
@@ -90,13 +89,11 @@ grepl("01002| 01075| 01027| 01060| 01007| 01003| 01082| 01062| 01073| 01033| 010
 
 ```
 
-
 ```{r}
 ##N/A data
 data_counties <- data_counties[!is.na(data_counties$sitters_birth_date), ]
 round(data_wide$sitters_birth_date, digits = 0)
 ```
-
 
 ```{r}
 avg_age_counties<- data_counties %>%
@@ -107,12 +104,10 @@ avg_age_counties$mean_age<- round(avg_age_counties$mean_age, digits = 0)
 
 ```
 
-
 ```{r}
 #merging data and ratings dataset together 
 rating_sitters <- ratings %>%
   inner_join(data, by = c("sitters_member_id" = "sitters_member_id", "sitters_user_id" = "sitters_user_id"))
-
 ```
 
 ```{r}
@@ -121,211 +116,20 @@ rating_sitters$sitters_birth_date = as.numeric(difftime(Sys.Date(),rating_sitter
 
 rating_sitters$sitters_birth_date<- round(rating_sitters$sitters_birth_date, digits = 0)
 
-#creating column with yes/no for additional services 
-rating_sitters <- rating_sitters %>% 
-  mutate(sitter_profiles_additional_services_yes_no = c("Yes"))
-
-```
-
-```{r}
-
-#pivotwider without losing column of ID's 
-
-rating_sitters_wide <- rating_sitters %>% 
-  pivot_wider(names_from = sitter_profiles_additional_services, values_from = sitter_profiles_additional_services_yes_no)
-
-
 ```
 
 ```{r}
 #Are older sitters more likely to get better ratings
 #Anova 
 
-anova_rating <- aov(sitters_birth_date~sitters_average_rating, data = rating_sitters_wide)
+anova_rating <- aov(sitters_birth_date~sitters_average_rating, data = rating_sitters)
 
 summary(anova_rating)
 
-
 ```
 
 ```{r}
-#Transformations needed
-
-#column of ages based on categories 
-#Under 18 /18-24 /25-34/ 35-44 /45-54 /55-64 /65 and over 
-
-rating_sitters_wide <- rating_sitters_wide %>% 
-  mutate(age_range = case_when(grepl("18|19|20|21|22|23|24", sitters_birth_date, ignore.case = TRUE) ~ "18-24", 
-
-grepl("25|26|27|28|29|30|31|32|33|34", sitters_birth_date, ignore.case = TRUE) ~ "25-34",       
-grepl("35|36|37|38|39|40|41|42|43|44", sitters_birth_date, ignore.case = TRUE) ~ "35-44",                      
-
-grepl("45|46|47|48|49|50|51|52|53|54", sitters_birth_date, ignore.case = TRUE) ~ "45-54",   
-
-                    
-grepl("55|56|57|58|59|60|61|62|63|64", sitters_birth_date, ignore.case = TRUE) ~ "55-64", TRUE ~ "65 and over"
-))                              
-         
-```
-
-```{r}
-#calculating average of sitters min and max pay rate 
-rating_sitters_wide <- rating_sitters_wide %>% 
-   mutate(mean_pay_rate_sitters=(as.numeric(sitters_pay_min) + as.numeric(sitters_pay_max))/2)
-```
-
-# Regression Calculations - Full data
-
-```{r}
-library(moderndive)
-
-#Regression idea: Do sitters with more years of experience and lower levels of education get paid more than those with higher level of education and less years of experience? 
-
-#getting rid of random negative numbers 
-rating_sitters_model <- rating_sitters_model %>% 
-  filter(sitter_profiles_years_of_experience >= 0) %>% 
-  filter(sitter_profiles_years_of_experience <=40) %>% 
-  filter(mean_pay_rate_sitters <=40)
-
-rating_sitters_model <- rating_sitters_model %>% 
-  drop_na(sitter_profiles_education_completed)
-
-sitters_rating_model<- lm(mean_pay_rate_sitters ~ sitter_profiles_years_of_experience * sitter_profiles_education_completed, data= rating_sitters_model)
-
-get_regression_table(sitters_rating_model)
-summary(sitters_rating_model)
-```
-
-```{r}
-#visualize regression 
-
-library(stargazer)
-stargazer(sitters_rating_model, type = "text")
-
-ggplot(data = rating_sitters_model, aes(x = sitter_profiles_years_of_experience, y = mean_pay_rate_sitters, color = sitter_profiles_education_completed)) + geom_smooth(se=FALSE) +
-ylab("Mean Pay Rate of Sitters") +
-xlab("Years of Experience of Sitters") + ggtitle("Regression Model with Sitters in MA") +
-  theme(axis.text.x = element_blank(),
-        axis.ticks.x = element_blank()) +
-  labs(color = "Level of Education")
-
-```
-
-# Regression Calculations - Partial data (MA)
-
-```{r}
-#getting rid of random negative numbers 
-rating_sitters_counties <- rating_sitters_counties %>% 
-  filter(sitter_profiles_years_of_experience >= 0) %>% 
-  filter(sitter_profiles_years_of_experience <=40) %>% 
-  filter(mean_pay_rate_sitters <=40)
-
-rating_sitters_counties<- rating_sitters_counties %>% 
-  drop_na(sitter_profiles_education_completed)
-
-rating_sitters_MA <- lm(mean_pay_rate_sitters ~ sitter_profiles_years_of_experience * sitter_profiles_education_completed, data= rating_sitters_counties)
-
-get_regression_table(rating_sitters_MA )
-summary(rating_sitters_MA)
-```
-
-```{r}
-
-ggplot(data = rating_sitters_counties, aes(x = sitter_profiles_years_of_experience, y = mean_pay_rate_sitters, color = sitter_profiles_education_completed)) + geom_point() +  geom_smooth()
-```
-
-# Visualizations for Memo
-
-```{r}
-
-#visualizing historgram to see spread of years of experience 
-rating_sitters_model <- rating_sitters_model %>% 
-  filter(sitter_profiles_years_of_experience >= 0) %>% 
-  filter(sitter_profiles_years_of_experience <=40)
-  
-histogram <- ggplot(data = rating_sitters_MA, mapping = aes(x = sitter_profiles_years_of_experience)) +
-  geom_histogram(color = "white", fill = "steelblue")
-histogram
-```
-
-```{r}
-histogram_age <- ggplot(data = rating_sitters_model, mapping = aes(x = sitters_birth_date)) +
-  geom_histogram(color = "white", fill = "steelblue")
-histogram_age
-```
-
-```{r}
-#add counties column to rating_sitters_wide 
-
-data_counties <- data_counties %>%  
-  select(sitters_user_id,counties) %>% 
-  filter(counties != "Other")
-
-#merging data_counties with  rating_sitters_wide by sitter_user_id
-
-rating_sitters_counties <- data_counties %>%
-  inner_join(rating_sitters_wide, by = c("sitters_user_id" = "sitters_user_id"))
-
-
-#exporting rating_sitters_counties
-write.csv(rating_sitters_counties, "rating_sitters_experience_range.csv", row.names=FALSE)
-
-
-
-```
-
-```{r}
-
-plot_1  <- rating_sitters_model %>% 
-  group_by(sitter_profiles_education_completed) %>% 
-  summarise( percent = 100 * n() / nrow(rating_sitters_wide))
-
-plot1 <- ggplot(plot_1, aes(x = sitter_profiles_education_completed, y = percent, fill = sitter_profiles_education_completed))+
-  geom_col(position = "dodge")+
-  scale_fill_brewer(palette = "Paired")+
-  xlab("Sitters Level of Education Complete") +
-  ylab("Percentage")+
-  ggtitle("Percentage of Sitters Level of Education in MA counties") +
-  theme(axis.text.x = element_blank(),
-        axis.ticks.x = element_blank())
-plot1
-
-```
-
-```{r}
-plot_2  <- rating_sitters_model %>% 
-  group_by(age_range) %>% 
-  summarise( percent = 100 * n() / nrow(rating_sitters_wide))
-```
-
-```{r}
-plot_3  <- rating_sitters_model %>% 
-  group_by(sitter_profiles_education_completed) %>% 
-  summarise( percent = 100 * n() / nrow(rating_sitters_wide))
-```
-
-```{r}
-#drop NA values from rating columns 
-
-plot_4  <- rating_sitters_model %>% 
-  group_by(sitters_average_rating) %>% 
-  summarise( percent = 100 * n() / nrow(rating_sitters_wide)) %>% 
-  drop_na(sitters_average_rating)
-  
-```
-
-```{r}
-
-plot_5  <- rating_sitters_model %>% 
-  group_by(sitter_profiles_years_of_experience) %>% 
-  summarise( percent = 100 * n() / nrow(rating_sitters_wide)) 
-```
-
-```{r}
-#percentage of people with "special skills" only with education level ("Some college or College Degree)
-
-plot_6 <- rating_sitters_model %>% 
-  filter(age_range == "18-24"|"25-34")
-  
-  
+#logistic regression 
+educ_lm <- lm(sitters_birth_date~sitter_profiles_education_completed, data = rating_sitters)
+summary(educ_lm)
 ```
