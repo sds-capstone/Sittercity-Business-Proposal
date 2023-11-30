@@ -1,0 +1,83 @@
+---
+title: "text_analysis"
+format: html
+editor: visual
+---
+
+```{r}
+#loading libraries
+library(tidyverse)
+library(readr)
+library(lubridate)
+library(janitor)
+library(stringr)
+```
+
+```{r}
+#reading sitters dataset 
+feedback <- read_csv("data/sitter_feedback.csv")
+```
+
+```{r}
+#selecting only useful columns 
+feedback <- feedback %>%  
+  select(user_id, score, reason) %>% 
+  rename(sitters_user_id = user_id)
+
+
+#joining wth full dataset to identify who are sitters and who are parents FROM MA ONLY
+feedback_data <- feedback %>%  
+  inner_join(data_counties, by = c("sitters_user_id" = "sitters_user_id"))
+
+```
+
+Overall not really useful since apparently most of the users that have left a review are not from Massachusetts.
+
+```{r}
+#filtering to sitters only 
+
+#I wonder whether it would be helpful or not to run the text analysis only for sitters or just do it all together? 
+
+```
+
+```{r}
+#text analysis 
+library(tidytext)
+data(stop_words)
+library(wordcloud)
+
+feedback_positive <- feedback %>%  
+  filter(score > 5 )
+
+
+feedback_positive <- tibble(reason = feedback_positive$reason)
+
+feedback_positive  <-feedback_positive   %>%
+  unnest_tokens(word, reason)
+
+feedback_positive  <- feedback_positive  %>%
+  anti_join(stop_words) %>% 
+  count(word) %>%
+  with(wordcloud(word, n, max.words = 100))
+
+
+
+```
+
+```{r}
+
+
+feedback_negative <- feedback %>%  
+  filter(score < 5 )
+
+feedback_negative <- tibble(reason = feedback_negative$reason)
+
+feedback_negative  <-feedback_negative   %>%
+  unnest_tokens(word, reason)
+
+feedback_negative <- feedback_negative%>%
+  anti_join(stop_words) %>% 
+  count(word) %>%
+  with(wordcloud(word, n, max.words = 100))
+
+```
