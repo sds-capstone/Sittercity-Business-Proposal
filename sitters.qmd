@@ -113,7 +113,6 @@ avg_age_counties$mean_age<- round(avg_age_counties$mean_age, digits = 0)
 rating_sitters <- ratings %>%
   inner_join(data, by = c("sitters_member_id" = "sitters_member_id", "sitters_user_id" = "sitters_user_id"))
 
-
 ```
 
 ```{r}
