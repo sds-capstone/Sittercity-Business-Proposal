@@ -50,11 +50,19 @@ Our research revealed an increase in parents working from home due to the pandem
 
 SCST suggests the introduction of a "Sittercity x College Collab" initiative, designed to attract more college students as potential sitters. The envisioned outcome is an increase in parent subscriptions. This proposal is founded on detailed findings, which will be further elaborated in the subsequent sections of this memo.
 
-Sitters with some level of education beyond high school are found to be more desirable by parents: College-aged sitters of 18-24, can provide additional special skills at a higher rate in comparison to any other age range. Eliminate Background Check Costs for parents: According to the Institute for Higher Education Policy, 72% of institutions require applicants to disclose their criminal history and conduct student background checks.
+1.  Sitters with some level of education beyond high school are found to be more desirable by parents:
 
-Currently, parents and sitters have to pay either: 20, 24, or 60 dollars for a background check alone, and for parents they have to pay additionally a sitters pay rate. Having a college sitter eliminates this additional cost as the background check has already been done by their school.
+    a\. College-aged sitters of 18-24, can provide additional special skills at a higher rate in comparison to any other age range.\
 
-Increase in Trust and safety from subscribed parents: Adding the college verification login ensures that a parent is getting a sitter from the accredited college they claim to be from and adds validity. Currently, Sittercity doesn't conduct any form of verification on a sitter's certifications or background unless paid for, however the added college login would add a layer of trust in Sittercity from parents.
+2.  Eliminate Background Check Costs for parents:
+
+    a\. According to the Institute for Higher Education Policy, 72% of institutions require applicants to disclose their criminal history and conduct student background checks.
+
+    b\. Currently, parents and sitters have to pay either: 20, 24, or 60 dollars for a background check alone, and for parents they have to pay additionally a sitters pay rate. Having a college sitter eliminates this additional cost as the background check has already been done by their school.
+
+3.  Increase in Trust and safety from subscribed parents:
+
+    a.  Adding the college verification login ensures that a parent is getting a sitter from the accredited college they claim to be from and adds validity. Currently, Sittercity doesn't conduct any form of verification on a sitter's certifications or background unless paid for, however the added college login would add a layer of trust in Sittercity from parents.
 
 # **Data**
 
@@ -70,9 +78,13 @@ In order to supplement our proposal, pitching for the incorporation of a College
 
 ### Market Research
 
-1.  Unbiased Exploration:We started our research by obtaining an unbiased perspective on Sittercity. Utilizing reliable research sites, we gathered information to comprehend Sittercity's reputation, user interface, and overall user experience. This approach was crucial in identifying areas of improvement without any preconceived notions.
+1.  Unbiased Exploration:
 
-2.  Immersive Platform Experience:To gain firsthand insights, we actively engaged with the Sittercity platform. We created decoy accounts, both from the perspective of a guardian and a potential sitter, immersing ourselves in the user experience. This hands-on approach allowed us to identify pain points and envision improvements from the user's standpoint.
+    We started our research by obtaining an unbiased perspective on Sittercity. Utilizing reliable research sites, we gathered information to comprehend Sittercity's reputation, user interface, and overall user experience. This approach was crucial in identifying areas of improvement without any preconceived notions.
+
+2.  Immersive Platform Experience:
+
+    To gain firsthand insights, we actively engaged with the Sittercity platform. We created decoy accounts, both from the perspective of a guardian and a potential sitter, immersing ourselves in the user experience. This hands-on approach allowed us to identify pain points and envision improvements from the user's standpoint.
 
 ### Data Analysis
 
@@ -86,7 +98,9 @@ In order to supplement our proposal, pitching for the incorporation of a College
 
 3.  **Customer Reviews**
 
-    As per our data analysis, we understand that customer feedback is invaluable, especially when implementing changes. We analyzed customer reviews to gauge satisfaction levels, identify recurring concerns, and highlight positive aspects of the platform. This qualitative data provided a nuanced understanding of user experiences, allowing us to align our proposed enhancements with user expectations.Our market research and data analysis yielded compelling results. Specifically, in Massachusetts, the abundance of college and university students presents a significant opportunity for the integration of a College Student component of Sittercity. Customer reviews, both positive and negative, guided us in identifying areas that require immediate attention and improvement. Overall, our holistic approach to market research and data analysis formed a robust foundation for our proposal.
+    As per our data analysis, we understand that customer feedback is invaluable, especially when implementing changes. We analyzed customer reviews to gauge satisfaction levels, identify recurring concerns, and highlight positive aspects of the platform. This qualitative data provided a nuanced understanding of user experiences, allowing us to align our proposed enhancements with user expectations.
+
+    Our market research and data analysis yielded compelling results. Specifically, in Massachusetts, the abundance of college and university students presents a significant opportunity for the integration of a College Student component of Sittercity. Customer reviews, both positive and negative, guided us in identifying areas that require immediate attention and improvement. Overall, our holistic approach to market research and data analysis formed a robust foundation for our proposal.
 
 # **Results**
 
@@ -196,7 +210,7 @@ Recognizing the widespread presence of colleges across states, tapping into coll
 
 The anticipated influx of subscribers from college student communities is poised to drive a significant increase in SitterCity's revenue. This growth is expected to be accompanied by a reduction in marketing and advertising expenses. Additionally, this collaboration strengthens the platform's trustworthiness, positioning it as a reliable choice for finding service providers, addressing existing weaknesses in comparison to competitors.
 
-# \*\* Conclusion\*\*
+# Conclusion
 
 To summarize our capstone, we can start by stating that the goal of this project was open-ended from the very beginning, Thus, we came up with a business proposal of interest for our data sponsor, Sittercity, by conducting an extensive exploratory data analysis combined with our experiences as college students based in Massachusetts, specifically within the 5-college community. This business plan was intended to counter the decline in premium subscribers and to realign Sittercity towards its foundational objective of serving as a platform for offering childcare services. Once we found out that the data provided by Sittercity matched the skills and demographics of most college students, we proposed a new subscription for college students only at a lower rate than what the actual premium subscribers pay now along with external research that supported the effectiveness of the idea. 
 
