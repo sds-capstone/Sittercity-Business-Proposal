@@ -1,19 +1,23 @@
 ---
-title: Title here
-Gracia
+title: Sittercity x Campus: Targeting College Student Subscribers to Boost Parental Subscriptions for SitterCity 
+
 # to produce blinded version set to 1
 blinded: 0
 
 authors: 
-- name: Abby P
+- name: Abby Paharsingh
   thanks: The authors gratefully acknowledge ...
-  affiliation: Department of YYY, University of XXX
+  affiliation: Department of Statistical Data Sciences, Smith College
   
-- name: Author 2
-  affiliation: Department of ZZZ, University of WWW
+- name: Brianna Mateo
+  affiliation: Department of Statistical Data Sciences, Smith College
   
 - name: Camila Maldonado
-  affiliation: Department of ZZZ, University of WWW
+  affiliation: Department of Statistical Data Sciences, Smith College
+  
+- name: Gracia Bareti
+  affiliation: Department of Statistical Data Sciences, Smith College
+
 
 keywords:
 - 3 to 6 keywords
@@ -43,114 +47,66 @@ The quick brown fox jumped over the lazy dog.
 The quick brown fox jumped over the lazy dog.
 __With this spacing we have 30 lines per page.__
 
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
+**Company Background**
+Sittercity, founded in 2001, stands as a pioneer in the online caregiving service industry. The platform focuses on connecting families with a broad network of babysitters, nannies, pet sitters, senior care providers, and tutors. The user-friendly interface allows parents to search for caregivers based on various criteria, including location, experience, and specific skills. In the course of its two-decade existence, the company has evolved by incorporating advanced technologies like background checks and enhanced matching algorithms, ensuring safety and reliability. Sittercity's impact is significant, modernizing the way families find and secure trusted care for their loved ones, establishing it as a notable entity in the caregiving industry. However, the company has faced controversies and customer complaints, particularly related to billing practices and customer service.
 
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
+**Introduction**
 
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
+In 2020, amidst the COVID-19 pandemic, Sittercity observed a significant decline in parent subscriptions, while sitters' interest steadily rose. Building on this discovery, the Smith College Sitter Team (SCST) further investigated the discrepancy in parental subscription declines through the internal Sittercity database and external customer reviews of the company.
 
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
+Our research revealed an increase in parents working from home due to the pandemic and preferring the convenience that comes with a babysitter/nanny coming to their home over a childcare center. This choice alleviates the concern of integrating a school schedule into their already busy routines. Additionally, we identified customer concerns related to the company's trust and safety, and the cost of Sittercity’s background check process, as some of the main factors contributing to parents canceling their subscriptions.
 
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
+SCST suggests the introduction of a "Sittercity x College Collab" initiative, designed to attract more college students as potential sitters. The envisioned outcome is an increase in parent subscriptions. This proposal is founded on detailed findings, which will be further elaborated in the subsequent sections of this memo.
 
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
+Sitters with some level of education beyond high school are found to be more desirable by parents:
+College-aged sitters of 18-24, can provide additional special skills at a higher rate in comparison to any other age range.
+Eliminate Background Check Costs for parents:
+According to the Institute for Higher Education Policy, 72% of institutions require applicants to disclose their criminal history and conduct student background checks.
 
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
+Currently, parents and sitters have to pay either: 20, 24, or 60 dollars for a background check alone, and for parents they have to pay additionally a sitters pay rate. Having a college sitter eliminates this additional cost as the background check has already been done by their school.
 
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
+Increase in Trust and safety from subscribed parents:
+Adding the college verification login ensures that a parent is getting a sitter from the accredited college they claim to be from and adds validity. Currently, Sittercity doesn’t conduct any form of verification on a sitter's certifications or background unless paid for, however the added college login would add a layer of trust in Sittercity from parents.
 
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
+**Data & Results**
 
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
+There were three main datasets provided by Sittercity for the capstone analysis: General Information of Sitters, Rating Information of Sitters, and Feedback data from both providers of services and parents. 
 
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
-The quick brown fox jumped over the lazy dog.
+*Notes:*
+Boston City was excluded from the cities within counties in MA due to its already existing popularity within the app. 
+The data provided for analysis is the 10% of data randomly generated and extracted from a bigger dataset. 
+The data used only contains years after the pandemic, 2020. This decision was made since during the pandemic the services were discouraged due to many parents and children staying at home and the lack of necessity for sitters. 
+A total of 205 observations were left within the dataset once all filters were applied. 
+
+(picture of data go here )
+
+**Results**
+In keeping with our proposed business idea, certain variables were prioritized to deliver efficient supporting insights. To demonstrate that the new business model could be relevant to the future of Sittercity, we chose to focus on those sitters located in Massachusetts broken down by county, excluding Boston only, due to the popularity of the app in the city, we decided to focus on other cities within counties with potential to be exploited taking into account the number of colleges surrounding these areas. 
+
+*Geographical data*: The top three counties in MA with the most sitters represented are Hampshire, Berkshire, and Hampden. 
+ 
+(picture goes here)
+
+*Age range*: We deliberately decided to make five different categories of age range to target our group of college students, since a traditional college student would fit within the category of 18–24 years old. From the data provided, we can see that 42% of our providers are within that category range, which supports our idea that people within this age range are more likely to sign up. This can be because many of these are individuals looking for a part-time job while studying throughout the academic year. 
+
+(picture goes here)
+
+*Level of Education*: Since Sittercity also asks for the level of education of the service providers, we were also interested in finding out whether most of these sitters were at college or had some type of college instructions as their qualification. More than 45% of sitters signaled to either have a college degree or have some type of college education, which we assume to refer to someone who is still in the process of getting a degree or has completed their education. 
+
+(picture goes here)
+
+*Years of Experience*: The data also showcases that the vast majority of sitters' years of experience range from 0–10 years, emphasizing 0–5 years. This is another example of how the experience that could be brought to SitterCity can be from students who have had experience working in settings where childcare was required. 
+
+(picture goes here )
+
+*Rating Scores*: We could not represent this fact due to many missing values. Overall, it seemed that sitters within the age range of 18-24 do not get as many ratings as other people within other age ranges. 
+
+*Hourly Pay Rate*:Another key factor of interest to our business proposal and data analysis was looking at the hourly minimum pay rate established by sitters in Massachusetts counties. This was to determine whether we could advertise signing up as a sitter as a better option than, for example, working an on-campus job with a minimum wage pay rate of $15 per hour. Most sitters with 0 to 8 years of experience ask and get paid a minimum of $18 or more. We can then conclude that a student could make more work as a sitter for an average of 10 hours than working on campus, or if taken as extra hours, this could also still be beneficial enough for them to acquire a membership within the app. 
+
+(picture goes here)
+
+(picutre goes here)
+
+
 
 
