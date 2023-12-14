@@ -1,0 +1,20 @@
+---
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+**Ethics Statement** \
+\
+We are committed to upholding the highest standards of ethics in data analysis.
+This commitment involves strict adherence to principles of integrity, transparency, and respect for data privacy and confidentiality.
+We ensure that all data collected and analyzed in this project are handled with the utmost confidentiality.
+Sittercity does not collect data on religion, sexual orientation, or other sensitive demographics that could potentially endanger the safety of any subscriber.
+We are dedicated to transparency in our methodologies, analyses, and findings.
+All assumptions, methods, and limitations of the data analysis are openly disclosed to provide clear insight into our research process and to allow for independent verification.
+
+We acknowledge the potential for bias in data collection, given that we are all current college students with no prior experience in the obligations surrounding parenting.
+Our analysis was conducted with proactive measures to identify and mitigate any such biases.
+This includes diverse sampling, rigorous data validation, and the use of statistical techniques to ensure unbiased and fair analysis.
+Our approach does not intend to inflict harm or bias based on age, nor do we seek to undermine an individual's worth or capabilities based on their educational attainment.
+Instead, we aim to utilize educational level as a key factor in supporting our pilot program, which primarily focuses on college students as the target audience.
