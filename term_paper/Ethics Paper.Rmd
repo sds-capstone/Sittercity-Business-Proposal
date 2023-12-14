@@ -4,7 +4,7 @@ editor_options:
     wrap: sentence
 ---
 
-**Ethics Statement** \
+**Ethics Statement**\
 \
 We are committed to upholding the highest standards of ethics in data analysis.
 This commitment involves strict adherence to principles of integrity, transparency, and respect for data privacy and confidentiality.
