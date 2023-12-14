@@ -1,13 +1,13 @@
 # 2023-09-proj5-sittercity
 
-[Albert Y. Kim](https://twitter.com/rudeboybert) 
-[Gracia Bareti](baretigracia@gmail.com)
-[Brianna Mateo](briannammateo@gmail.com)
-[Abby Paharsingh](arpaharsingh@gmail.com)
-[Camila Maldonado](camilamaldonado01.cm@gmail.com) 
+[Albert Y. Kim](https://twitter.com/rudeboybert) /
+[Gracia Bareti](baretigracia@gmail.com)/
+[Brianna Mateo](briannammateo@gmail.com)/
+[Abby Paharsingh](arpaharsingh@gmail.com)/
+[Camila Maldonado](camilamaldonado01.cm@gmail.com) /
 
 The Sittercity data capstone project was built by analyzing data provided by the data sponsor, taking us to act as data consultants. We then took on the mission of proposing a business idea to help their company alleviate the decrease in their premium subscription rate. 
-
+//
 Data files: 
 sittercity_EDA: Refers to the qmd file where the first exploratory data analysis was conducted. 
 Sitters.qmd: This is the qmd where the actual analysis and cleaning of data was conducted to be then taken and read into Tableau. 
