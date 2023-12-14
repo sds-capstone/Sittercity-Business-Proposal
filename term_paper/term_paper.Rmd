@@ -1,26 +1,15 @@
 ---
 title: Sittercity x Campus: Targeting College Student Subscribers to Boost Parental Subscriptions for SitterCity 
-<<<<<<< HEAD
-=======
+
 
 # to produce blinded version set to 1
->>>>>>> d2b20cf8d0c377d459df9b0b085945a63a5c84bf
+
 blinded: 0
 authors: 
-<<<<<<< HEAD
+
   
   
   
-- name: Abby Paharsingh
-  thanks: The authors gratefully acknowledge ...
-  affiliation: Department of Statistical Data Sciences, Smith College
-- name: Brianna Mateo
-  affiliation: Department of Statistical Data Sciences, Smith College
-- name: Camila Maldonado
-  affiliation: Department of Statistical Data Sciences, Smith College
-- name: Gracia Bareti
-  affiliation: Department of Statistical Data Sciences, Smith College
-=======
 - name: Abby Paharsingh
   thanks: The authors gratefully acknowledge ...
   affiliation: Department of Statistical Data Sciences, Smith College
@@ -34,12 +23,16 @@ authors:
 - name: Gracia Bareti
   affiliation: Department of Statistical Data Sciences, Smith College
 
-
->>>>>>> d2b20cf8d0c377d459df9b0b085945a63a5c84bf
 keywords:
-- 3 to 6 keywords
-- that do not appear in the title
-abstract: |
+- Business Analytics, BabySitting, College Students, Trust & Safety, Data
+
+abstract: 
+This paper presents an analysis of Sittercity, a pioneering online caregiving service founded in 2001. The platform connects families with caregivers while incorporating advanced technologies for safety and reliability. The study delves into datasets provided by Sittercity, while focusing on sitters in Massachusetts post-pandemic as a case study. The analysis explores geographical distribution, age range, education levels, years of experience, rating scores, and hourly pay rates, utilizing regression models.
+
+Research is conducted to analyze feedback from customers, revealing positive sentiments about the site's use and service variety. However, negative feedback highlights issues such as sitter unavailability and communication inefficiencies. The paper proposes a business model introducing a college student component to attract a reliable pool of sitters from educational institutions. The study emphasizes market research, demographic analysis, and customer reviews to provide a data-driven foundation for the proposal.
+
+The proposed model offers benefits to both parents and students, introducing a verification process, reduced student subscription costs, and additional perks. The paper outlines potential business incentives, including increased subscribers, enhanced services, targeted location coverage, and revenue growth. The conclusion acknowledges limitations and suggests future applications, emphasizing nationwide data analysis and a pilot implementation in collaboration with business schools. The ethics statement underscores the commitment to data integrity, transparency, and privacy, ensuring the analysis's ethical conduct.
+
   
 bibliography: bibliography.bib
 output: rticles::asa_article
@@ -62,7 +55,7 @@ This section will be just long enough to illustrate what a full page of text loo
 
 ### **Company Background** 
 
-<<<<<<< HEAD
+
 Sittercity, founded in 2001, stands as a pioneer in the online caregiving service industry. The platform focuses on connecting families with a broad network of babysitters, nannies, pet sitters, senior care providers, and tutors. The user-friendly interface allows parents to search for caregivers based on various criteria, including location, experience, and specific skills. In the course of its two-decade existence, the company has evolved by incorporating advanced technologies like background checks and enhanced matching algorithms, ensuring safety and reliability. Sittercity's impact is significant, modernizing the way families find and secure trusted care for their loved ones, establishing it as a notable entity in the caregiving industry. However, the company has faced controversies and customer complaints, particularly related to billing practices and customer service.
 
 ### **Introduction**
@@ -84,7 +77,7 @@ Increase in Trust and safety from subscribed parents: Adding the college verific
 There were three main data sets provided by Sittercity for the capstone analysis: General Information of Sitters, Rating Information of Sitters, and Feedback data from both providers of services and parents.
 
 *Notes:* Boston City was excluded from the cities within counties in MA due to its already existing popularity within the app. The data provided for analysis is the 10% of data randomly generated and extracted from a bigger data set. The data used only contains years after the pandemic, 2020. This decision was made since during the pandemic the services were discouraged due to many parents and children staying at home and the lack of necessity for sitters. A total of 205 observations were left within the dataset once all filters were applied.
-=======
+
 **Company Background**
 Sittercity, founded in 2001, stands as a pioneer in the online caregiving service industry. The platform focuses on connecting families with a broad network of babysitters, nannies, pet sitters, senior care providers, and tutors. The user-friendly interface allows parents to search for caregivers based on various criteria, including location, experience, and specific skills. In the course of its two-decade existence, the company has evolved by incorporating advanced technologies like background checks and enhanced matching algorithms, ensuring safety and reliability. Sittercity's impact is significant, modernizing the way families find and secure trusted care for their loved ones, establishing it as a notable entity in the caregiving industry. However, the company has faced controversies and customer complaints, particularly related to billing practices and customer service.
 
@@ -146,7 +139,7 @@ In keeping with our proposed business idea, certain variables were prioritized t
 (picutre goes here)
 
 
->>>>>>> d2b20cf8d0c377d459df9b0b085945a63a5c84bf
+
 
 (picture of data go here )
 
