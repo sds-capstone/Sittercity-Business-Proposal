@@ -52,17 +52,38 @@ SCST suggests the introduction of a "Sittercity x College Collab" initiative, de
 
 1.  Sitters with some level of education beyond high school are found to be more desirable by parents:
 
+<<<<<<< HEAD
     a\. College-aged sitters of 18-24, can provide additional special skills at a higher rate in comparison to any other age range.\
 
+=======
+
+    a\. College-aged sitters of 18-24, can provide additional special skills at a higher rate in comparison to any other age range. \
+
+    a\. College-aged sitters of 18-24, can provide additional special skills at a higher rate in comparison to any other age range.\
+
+
+>>>>>>> 56a15ba (y commit message)
 2.  Eliminate Background Check Costs for parents:
 
     a\. According to the Institute for Higher Education Policy, 72% of institutions require applicants to disclose their criminal history and conduct student background checks.
 
     b\. Currently, parents and sitters have to pay either: 20, 24, or 60 dollars for a background check alone, and for parents they have to pay additionally a sitters pay rate. Having a college sitter eliminates this additional cost as the background check has already been done by their school.
 
+<<<<<<< HEAD
 3.  Increase in Trust and safety from subscribed parents:
 
     a.  Adding the college verification login ensures that a parent is getting a sitter from the accredited college they claim to be from and adds validity. Currently, Sittercity doesn't conduct any form of verification on a sitter's certifications or background unless paid for, however the added college login would add a layer of trust in Sittercity from parents.
+=======
+
+3.  Increase in Trust and safety from subscribed parents: \
+    \
+    a. Adding the college verification login ensures that a parent is getting a sitter from the accredited college they claim to be from and adds validity. Currently, Sittercity doesn't conduct any form of verification on a sitter's certifications or background unless paid for, however the added college login would add a layer of trust in Sittercity from parents.
+
+3.  Increase in Trust and safety from subscribed parents:
+
+    a.  Adding the college verification login ensures that a parent is getting a sitter from the accredited college they claim to be from and adds validity. Currently, Sittercity doesn't conduct any form of verification on a sitter's certifications or background unless paid for, however the added college login would add a layer of trust in Sittercity from parents.
+
+>>>>>>> 56a15ba (y commit message)
 
 # **Data**
 
