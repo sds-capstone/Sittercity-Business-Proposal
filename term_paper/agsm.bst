@@ -443,7 +443,7 @@ FUNCTION {format.article.crossref}
     }
     { "{\em in} \citeasnoun{" crossref * "}" * }
   if$
- 
+
 }
 
 FUNCTION {format.book.crossref}
@@ -492,7 +492,7 @@ FUNCTION {format.incoll.inproc.crossref}
     }
     { "{\em in} \citeasnoun{" crossref * "}" * }
   if$
-  
+
 }
 
 INTEGERS { len }
