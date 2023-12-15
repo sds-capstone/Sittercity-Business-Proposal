@@ -1,22 +1,19 @@
 ---
-title: Sittercity x Campus: Targeting College Student Subscribers to Boost Parental Subscriptions for SitterCity 
+title: "Sittercity x Campus: Targeting College Student Subscribers to Boost Parental Subscriptions for SitterCity"
 blinded: 0
 authors: 
-  
-  
-  
-- name: Abby Paharsingh
-  thanks: The authors gratefully acknowledge ...
-  affiliation: Department of Statistical Data Sciences, Smith College
-- name: Brianna Mateo
-  affiliation: Department of Statistical Data Sciences, Smith College
-- name: Camila Maldonado
-  affiliation: Department of Statistical Data Sciences, Smith College
-- name: Gracia Bareti
-  affiliation: Department of Statistical Data Sciences, Smith College
+  - name: Abby Paharsingh
+    thanks: "The authors gratefully acknowledge ..."
+    affiliation: "Department of Statistical Data Sciences, Smith College"
+  - name: Brianna Mateo
+    affiliation: "Department of Statistical Data Sciences, Smith College"
+  - name: Camila Maldonado
+    affiliation: "Department of Statistical Data Sciences, Smith College"
+  - name: Gracia Bareti
+    affiliation: "Department of Statistical Data Sciences, Smith College"
 keywords:
-- 3 to 6 keywords
-- that do not appear in the title
+  - "3 to 6 keywords"
+  - "that do not appear in the title"
 abstract: |
   
 bibliography: bibliography.bib
@@ -25,6 +22,7 @@ editor_options:
   markdown: 
     wrap: sentence
 ---
+
 
 # Introduction
 
@@ -73,7 +71,9 @@ There were three main data sets provided by Sittercity for the capstone analysis
 
 *Notes:* Boston City was excluded from the cities within counties in MA due to its already existing popularity within the app. The data provided for analysis is the 10% of data randomly generated and extracted from a bigger data set. The data used only contains years after the pandemic, 2020. This decision was made since during the pandemic the services were discouraged due to many parents and children staying at home and the lack of necessity for sitters. A total of 205 observations were left within the dataset once all filters were applied.
 
-(picture of data go here )
+![Data Dictionary](images/example.png)
+
+
 
 # Methods
 
