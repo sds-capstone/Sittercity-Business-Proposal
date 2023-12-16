@@ -32,8 +32,6 @@ header-includes:
 ![Caption for the image](IMAGES/data_dictionary.png)
 
 
-![Caption for the image](IMAGES/EXAMPLE.png)
-
 
 
 
