@@ -37,7 +37,8 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \hypersetup{
   pdftitle={Sittercity x Campus: Targeting College Student Subscribers to Boost Parental Subscriptions for SitterCity},
-  pdfkeywords={3 to 6 keywords, that do not appear in the title},
+  pdfkeywords={Business Analytics, BabySitting, Customer Feedback, Data
+Science},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
@@ -58,8 +59,9 @@
 to Boost Parental Subscriptions for SitterCity}
 
   \author{
-        Abby Paharsingh \thanks{The authors gratefully acknowledge
-\ldots{}} \\
+        Abby Paharsingh \thanks{The authors gratefully acknowledge our
+sponsor Starry Zhou, Albert Kim, Smith College, and the Statistical Data
+Sciences Department.} \\
     Department of Statistical Data Sciences, Smith College\\
      and \\     Brianna Mateo \\
     Department of Statistical Data Sciences, Smith College\\
@@ -84,60 +86,63 @@ Subscribers to Boost Parental Subscriptions for SitterCity}
 } \fi
 
 \bigskip
+\begin{abstract}
+This paper presents an analysis of Sittercity, a pioneering online
+caregiving service founded in 2001. The platform connects families with
+caregivers while incorporating advanced technologies for safety and
+reliability. The study delves into datasets provided by Sittercity,
+while focusing on sitters in Massachusetts post-pandemic as a case
+study. The analysis explores geographical distribution, age range,
+education levels, years of experience, rating scores, and hourly pay
+rates, utilizing regression models.Research is conducted to analyze
+feedback from customers, revealing positive sentiments about the site's
+use and service variety. However, negative feedback highlights issues
+such as sitter unavailability and communication inefficiencies. The
+paper proposes a business model introducing a college student component
+to attract a reliable pool of sitters from educational institutions. The
+study emphasizes market research, demographic analysis, and customer
+reviews to provide a data-driven foundation for the proposal.The
+proposed model offers benefits to both parents and students, introducing
+a verification process, reduced student subscription costs, and
+additional perks. The paper outlines potential business incentives,
+including increased subscribers, enhanced services, targeted location
+coverage, and revenue growth. The conclusion acknowledges limitations
+and suggests future applications, emphasizing nationwide data analysis
+and a pilot implementation in collaboration with business schools. The
+ethics statement underscores the commitment to data integrity,
+transparency, and privacy, ensuring the analysis's ethical conduct.
+\end{abstract}
 
 \noindent%
-{\it Keywords:} 3 to 6 keywords, that do not appear in the title
+{\it Keywords:} Business Analytics, BabySitting, Customer Feedback, Data
+Science
 
 \vfill
 
 \newpage
 \spacingset{1.9} % DON'T change the spacing!
 
-\begin{figure}
-\centering
-\includegraphics{IMAGES/data_dictionary.png}
-\caption{Caption for the image}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics{IMAGES/data_dictionary.png}
-\caption{Caption for the image}
-\end{figure}
-
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
-
-This template demonstrates some of the basic latex you'll need to know
-to create a ASA article.
-
-\section{Verifications}
-\label{sec:verify}
-
-This section will be just long enough to illustrate what a full page of
-text looks like, for margins and spacing.
 
 \hypertarget{company-background}{%
 \subsubsection{\texorpdfstring{\textbf{Company
 Background}}{Company Background}}\label{company-background}}
 
 Sittercity, founded in 2001, stands as a pioneer in the online
-caregiving service industry. The platform focuses on connecting families
+caregiving service industry.The platform focuses on connecting families
 with a broad network of babysitters, nannies, pet sitters, senior care
-providers, and tutors. The user-friendly interface allows parents to
+providers, and tutors.The user-friendly interface allows parents to
 search for caregivers based on various criteria, including location,
-experience, and specific skills. In the course of its two-decade
+experience, and specific skills.In the course of its two-decade
 existence, the company has evolved by incorporating advanced
 technologies like background checks and enhanced matching algorithms,
 ensuring safety and reliability. Sittercity's impact is significant,
 modernizing the way families find and secure trusted care for their
 loved ones, establishing it as a notable entity in the caregiving
-industry. However, the company has faced controversies and customer
+industry.However, the company has faced controversies and customer
 complaints, particularly related to billing practices and customer
-service.
-
-\hypertarget{introduction-1}{%
-\subsubsection{\texorpdfstring{\textbf{Introduction}}{Introduction}}\label{introduction-1}}
+service.\citep{SitterCityComplaints}
 
 In 2020, amidst the COVID-19 pandemic, Sittercity observed a significant
 decline in parent subscriptions, while sitters' interest steadily rose.
@@ -148,12 +153,13 @@ company.
 
 Our research revealed an increase in parents working from home due to
 the pandemic and preferring the convenience that comes with a
-babysitter/nanny coming to their home over a childcare center. This
+babysitter/nanny coming to their home over a childcare center.This
 choice alleviates the concern of integrating a school schedule into
 their already busy routines. Additionally, we identified customer
 concerns related to the company's trust and safety, and the cost of
 Sittercity's background check process, as some of the main factors
-contributing to parents canceling their subscriptions.
+contributing to parents canceling their
+subscriptions.\citep{SitterCityBackgroundChecks}
 
 SCST suggests the introduction of a ``Sittercity x College Collab''
 initiative, designed to attract more college students as potential
@@ -182,8 +188,7 @@ elaborated in the subsequent sections of this memo.
   this additional cost as the background check has already been done by
   their school.
 \item
-  Increase in Trust and safety from subscribed parents:\\
-  \strut \\
+  Increase in Trust and safety from subscribed parents:
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
@@ -198,8 +203,10 @@ elaborated in the subsequent sections of this memo.
   \end{enumerate}
 \end{enumerate}
 
+\newpage
+
 \hypertarget{data}{%
-\section{\texorpdfstring{\textbf{Data}}{Data}}\label{data}}
+\section{Data}\label{data}}
 
 There were three main data sets provided by Sittercity for the capstone
 analysis: General Information of Sitters, Rating Information of Sitters,
@@ -213,6 +220,15 @@ after the pandemic, 2020. This decision was made since during the
 pandemic the services were discouraged due to many parents and children
 staying at home and the lack of necessity for sitters. A total of 205
 observations were left within the dataset once all filters were applied.
+
+\begin{figure}
+\centering
+\includegraphics{IMAGES/data_dictionary.png}
+\caption{The following are data descriptions of the variables used in
+the analysis.}
+\end{figure}
+
+\newpage
 
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
@@ -290,6 +306,8 @@ our proposed enhancements.
   foundation for our proposal.
 \end{enumerate}
 
+\newpage
+
 \hypertarget{results}{%
 \section{\texorpdfstring{\textbf{Results}}{Results}}\label{results}}
 
@@ -302,21 +320,33 @@ the app in the city, we decided to focus on other cities within counties
 with potential to be exploited taking into account the number of
 colleges surrounding these areas.
 
-\emph{Geographical data}: The top three counties in MA with the most
-sitters represented are Hampshire, Berkshire, and Hampden.
+\begin{figure}
+\centering
+\includegraphics[width=5.20833in,height=4.6875in]{IMAGES/totalnumbersofsitter.png}
+\caption{Geographical Data: The top three counties in MA with the most
+sitters represented are Hampshire, Berkshire, and Hampden.}
+\end{figure}
 
-(picture goes here)
+\newpage
 
 \emph{Age range}: We deliberately decided to make five different
 categories of age range to target our group of college students, since a
-traditional college student would fit within the category of 18--24
-years old. From the data provided, we can see that 42\% of our providers
-are within that category range, which supports our idea that people
-within this age range are more likely to sign up. This can be because
-many of these are individuals looking for a part-time job while studying
+traditional college student would fit within the category of 18-24 years
+old. From the data provided, we can see that 42\% of our providers are
+within that category range, which supports our idea that people within
+this age range are more likely to sign up. This can be because many of
+these are individuals looking for a part-time job while studying
 throughout the academic year.
 
-(picture goes here)
+\begin{figure}
+\centering
+\includegraphics[width=6.25in,height=2.08333in]{IMAGES/agerangeofsitters.png}
+\caption{Age Range: This figure illustrates the age distribution among
+service providers in our dataset, categorizing them into five distinct
+age ranges.}
+\end{figure}
+
+\newpage
 
 \emph{Level of Education}: Since Sittercity also asks for the level of
 education of the service providers, we were also interested in finding
@@ -326,7 +356,15 @@ signaled to either have a college degree or have some type of college
 education, which we assume to refer to someone who is still in the
 process of getting a degree or has completed their education.
 
-(picture goes here)
+\begin{figure}
+\centering
+\includegraphics[width=6.25in,height=2.08333in]{IMAGES/sitterslevelofedu.png}
+\caption{Level of Education: This figure presents insights into the
+educational background of service providers on Sittercity, focusing on
+their level of education.}
+\end{figure}
+
+\newpage
 
 \emph{Years of Experience}: The data also showcases that the vast
 majority of sitters' years of experience range from 0--10 years,
@@ -334,12 +372,15 @@ emphasizing 0--5 years. This is another example of how the experience
 that could be brought to SitterCity can be from students who have had
 experience working in settings where childcare was required.
 
-(picture goes here )
+\begin{figure}
+\centering
+\includegraphics[width=4.79167in,height=4.16667in]{IMAGES/sittersexperience.png}
+\caption{Years of Experience: This figure provides a comprehensive view
+of the distribution of years of experience among service providers on
+SitterCity.}
+\end{figure}
 
-\emph{Rating Scores}: We could not represent this fact due to many
-missing values. Overall, it seemed that sitters within the age range of
-18-24 do not get as many ratings as other people within other age
-ranges.
+\newpage
 
 \emph{Hourly Pay Rate}:Another key factor of interest to our business
 proposal and data analysis was looking at the hourly minimum pay rate
@@ -352,20 +393,32 @@ could make more work as a sitter for an average of 10 hours than working
 on campus, or if taken as extra hours, this could also still be
 beneficial enough for them to acquire a membership within the app.
 
-(picture goes here)
+\begin{figure}
+\centering
+\includegraphics[width=6.25in,height=2.08333in]{IMAGES/meanpay.png}
+\caption{Average Hourly Pay Rate: This figure shows an hourly pay rates
+made by sitters in Massachusetts counties on average.}
+\end{figure}
+
+\newpage
 
 \emph{Average Compensation of Sitters in MA based on Years of Experience
 and Level of Education Completed}:
 
-(picutre goes here)
+\begin{figure}
+\centering
+\includegraphics[width=6.25in,height=4.16667in]{IMAGES/regressionmodel.png}
+\caption{Average Hourly Pay Rate: This figure shows the average
+compensation of sitters in MA based on Years of Experience and Level of
+Education Completed .}
+\end{figure}
 
-note: Outliers were filtered in both dependent and independent
-variables. Years of Experience = 40 Mean Pay Rate = 60
-
-Through a regression model, we were interested in understanding whether
-there were any significant differences or relationships between the
-minimum pay rate and sitters' college years of experience. To summarize,
-we wanted to answer the following question:
+Note: Outliers were filtered in both dependent and independent
+variables. Years of Experience = 40 Average Pay Rate = 60
+\newpage Through a regression model, we were interested in understanding
+whether there were any significant differences or relationships between
+the minimum pay rate and sitters' college years of experience. To
+summarize, we wanted to answer the following questions:
 
 H0: Babysitters' minimum pay rate is higher based on their years of
 experience. H1: Babysitters minimum pay rate is not higher based on
@@ -392,23 +445,67 @@ of experience can help increase the pay rate asked by sitters, yet it
 will be more significant for those with a college degree education,
 which is our target group of people.
 
-\emph{Special Skills within the age range 18-24}:
+\newpage
 
-Times have changed and so have necessities. Due to the new remote
-working environment brought about after the COVID-19 pandemic, most
-parents are now at home and only need babysitting for special occasions
-or to help their children with specific needs. Those sitters within the
-age range of 18-24 and 25-34 are best suited with skills such as helping
-with homework (tutoring), being certified for CPR and First Aid (could
-be learned in college), meal preparation, and laundry, compared to those
-other age ranges. The reason behind this is that when in a college
-environment, a student can easily get access to these certifications
-while also getting experience in different subject areas and abilities
-that living in college requires someone to develop.
+\emph{Additional Services: Various Age Ranges}:
 
-(picture goes here)
+In this visualization, we aimed to analyze the additional services
+provided by sitters and identify patterns among demographics to pinpoint
+sitters and their super-star qualities.~ Our graph revealed that
+individuals in the 18-24 and 25-34 age groups offer more of a diverse
+range of additional services. It appears that younger sitters, aged
+18-24 and 25-34, tend to provide more services, possibly driven by a
+desire to earn more income and possessing the mobility and patience
+required for these offerings. After seeing these, we want to bring our
+focus back to college students, and after revealing that ages 18- to 24
+offer more additional services, we were curious to see how many of those
+were college students.
 
-Text Mining Analysis on Feedback ``Reason'' for Score given data:
+\begin{figure}
+\centering
+\includegraphics[width=6.25in,height=3.125in]{IMAGES/additionalservicesbri2.png}
+\caption{The figure illustrates a demographic analysis of additional
+services offered by sitters through different age ranges.}
+\end{figure}
+
+\newpage
+\newpage
+
+\begin{figure}
+\centering
+\includegraphics[width=6.25in,height=3.125in]{IMAGES/AdditionalServices Bri.png}
+\caption{Contrasting Additional Services Offered by College and
+Non-College Students within the 18-24 Age Range}
+\end{figure}
+
+After honing into the 18-24 age range, we can't assume that all
+individuals within this demographic were necessarily college students.
+So to refine our analysis, we further categorized them based on their
+education levels: some college, college degree, or graduate degree were
+labeled as ``college students,'', while those with other educational
+backgrounds were categorized as ``non-college students.'' We wanted to
+see how many additional services were offered by each group within the
+same age range. Our investigation revealed a clear distinction between
+college and non-college students in terms of the additional services
+they provide. Despite the slight difference, there was still a
+difference observed in the extent of additional services offered. For
+instance, for~ light housekeeping, over 60 college students displayed an
+inclination to offer such services, while their non-college counterparts
+numbered just under 40. This discrepancy could be attributed to various
+factors, such as the discipline instilled in college students or their
+familiarity with independent living during their college years.
+
+Our visualizations,~ distinctly illustrate that college students are
+more inclined to offer a broader spectrum of additional services
+compared to their non-college counterparts. This insight strengthens our
+argument that this demographic is pivotal when enhancing sitter profiles
+and tailoring initiatives aimed at improving the overall platform. It is
+noteworthy that the data highlights the potential benefits of focusing
+on college students, given their preference for offering a diverse range
+of services, thereby contributing to the platform's growth and appeal.
+
+\emph{Text Mining Analysis on Feedback ``Reason'' for Score :}
+
 Sittercity, the app, randomly prompts its users in a question box to
 rate their service and give written feedback on the app throughout their
 time as users and when quitting the subscription. Data mining was used
@@ -465,8 +562,6 @@ they realize they can make more of their time through the flexibility of
 hours offered and set a higher minimum pay rate, then they will choose
 to stay in the app and pay for the monthly subscription.~
 
-(picture goes here)
-
 \hypertarget{parental-benefits}{%
 \subsubsection{\texorpdfstring{\textbf{Parental
 Benefits}}{Parental Benefits}}\label{parental-benefits}}
@@ -507,13 +602,13 @@ parents.
 Perks}}{Student Perks}}\label{student-perks}}
 
 Students can sign up at a reduced cost and enjoy a complimentary
-one-month trial. As they discover the advantages of the SitterCity
+one-month trial.As they discover the advantages of the SitterCity
 student account, they may opt to continue using it and subscribe to the
 monthly plan.~
 
 Students subscribing to the service can access a range of perks, like
 discounts at local stores and additional subscriptions such as Hulu and
-Spotify. They also have the opportunity to become Sitter City brand
+Spotify.They also have the opportunity to become Sitter City brand
 ambassadors, where they can organize on-campus events and workshops,
 promoting the app within the community.~
 
@@ -535,21 +630,39 @@ and supplementary services.
 \textbf{Targeted Location Coverage}
 
 Recognizing the widespread presence of colleges across states, tapping
-into college student communities ensures a broad geographic coverage.
-This strategic approach addresses feedback about insufficient service
-providers in specific areas, especially where premium users seek
-sitters. By focusing on zones around college campuses, this
-collaboration aims to alleviate this issue.
+into college student communities ensures a broad geographic
+coverage.This strategic approach addresses feedback about insufficient
+service providers in specific areas, especially where premium users seek
+sitters.By focusing on zones around college campuses, this collaboration
+aims to alleviate this issue.
 
 \textbf{Revenue Growth}
 
 The anticipated influx of subscribers from college student communities
 is poised to drive a significant increase in SitterCity's revenue. This
 growth is expected to be accompanied by a reduction in marketing and
-advertising expenses. Additionally, this collaboration strengthens the
+advertising expenses.Additionally, this collaboration strengthens the
 platform's trustworthiness, positioning it as a reliable choice for
 finding service providers, addressing existing weaknesses in comparison
-to competitors.
+to competitors. \newpage
+
+\begin{figure}
+  \centering
+  \includegraphics[width=300px, height=150px]{IMAGES/UX1.png}
+  \caption{User Experience (UX) Mock Design of SitterCityxCollegeCollab on SitterCity Homepage}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=300px, height=150px]{IMAGES/UX2.png}
+  \caption{SitterCityxCollegeCollab on SitterCity Sign-Up Page}
+\end{figure}
+
+\newpage
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\newpage
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
@@ -604,8 +717,29 @@ summer breaks to also have an overview of the results throughout the
 fluctuation of the school year. We some business schools would be prime
 candidates for collaborating with this project.
 
+\newpage
+
+\hypertarget{appendix}{%
+\section{Appendix}\label{appendix}}
+
+\includegraphics{IMAGES/UX3.png} \emph{UX Mock Design of Verified
+College Sitter Profile}
+
+\newpage
+
+\includegraphics{IMAGES/good reviews.png} \emph{Positive Reviews Of
+SitterCity}
+
+\newpage
+
+\includegraphics{IMAGES/badreviews.png} \emph{Negative Reviews of
+SitterCity}
+
+\newpage
+
 \bibliographystyle{plain}
-\bibliography{}
+\renewcommand\refname{References}
+\bibliography{bibliography.bib}
 
 
 
